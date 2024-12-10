@@ -269,7 +269,7 @@ signal ram_clk_config : mem_type := (
 -- initialize memory with valid clock configuration
    X"00000801", 
    X"00000000",
-   X"0000000A", 
+   X"00000008", 
    X"00000000",
    X"0000C350",
    X"00000001",
@@ -336,7 +336,7 @@ signal SEN         :std_logic;
 signal Reset_axi         :std_logic;
 signal load_enable_reg           :std_logic_vector(0 to 31);
 signal clkfbout_reg           :std_logic_vector(0 to 31) := X"00000801";
-signal clkout0_reg           :std_logic_vector(0 to 31) := X"0000000A" ;
+signal clkout0_reg           :std_logic_vector(0 to 31) := X"00000008" ;
 signal config_reg           :std_logic_vector(0 to 31);
 begin
 
@@ -388,7 +388,7 @@ begin
        -- reset values
 	    ram_clk_config(0)  <=    X"00000801";
 	    ram_clk_config(1)  <=    X"00000000";
-	    ram_clk_config(2)  <=    X"0000000A";
+	    ram_clk_config(2)  <=    X"00000008";
 	    ram_clk_config(3)  <=    X"00000000";
 	    ram_clk_config(4)  <=    X"0000C350";
 	    ram_clk_config(5)  <=    X"00000001";
@@ -589,7 +589,7 @@ mmcm_drp_inst: design_1_clk_wiz_0_0_mmcm_drp generic map (
   S1_CLKFBOUT_FRAC_EN       =>  0, 
   S1_BANDWIDTH              => "OPTIMIZED",
   S1_DIVCLK_DIVIDE          =>  1,
-  S1_CLKOUT0_DIVIDE         =>  10,
+  S1_CLKOUT0_DIVIDE         =>  8,
   S1_CLKOUT0_PHASE          =>  0,
   S1_CLKOUT0_DUTY           =>  50000, 
   S1_CLKOUT0_FRAC           =>  0, 

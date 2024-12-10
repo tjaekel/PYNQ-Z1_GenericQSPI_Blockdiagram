@@ -2,7 +2,7 @@
 --Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------
 --Tool Version: Vivado v.2023.2 (win64) Build 4029153 Fri Oct 13 20:14:34 MDT 2023
---Date        : Thu Nov  7 22:36:56 2024
+--Date        : Sat Dec  7 14:59:44 2024
 --Host        : LAPTOP-TJAEKEL2 running 64-bit major release  (build 9200)
 --Command     : generate_target design_1.bd
 --Design      : design_1
@@ -1558,7 +1558,6 @@ entity design_1 is
     FIXED_IO_ps_porb : inout STD_LOGIC;
     FIXED_IO_ps_srstb : inout STD_LOGIC;
     QCLK_0 : out STD_LOGIC;
-    QCLKfb_0 : in STD_LOGIC;
     QD_0 : inout STD_LOGIC_VECTOR ( 3 downto 0 );
     spi_io0_i : in STD_LOGIC;
     spi_io0_o : out STD_LOGIC;
@@ -1574,7 +1573,7 @@ entity design_1 is
     spi_ss_t : out STD_LOGIC
   );
   attribute CORE_GENERATION_INFO : string;
-  attribute CORE_GENERATION_INFO of design_1 : entity is "design_1,IP_Integrator,{x_ipVendor=xilinx.com,x_ipLibrary=BlockDiagram,x_ipName=design_1,x_ipVersion=1.00.a,x_ipLanguage=VHDL,numBlks=15,numReposBlks=9,numNonXlnxBlks=0,numHierBlks=6,maxHierDepth=0,numSysgenBlks=0,numHlsBlks=0,numHdlrefBlks=0,numPkgbdBlks=0,bdsource=USER,da_axi4_cnt=5,da_board_cnt=3,da_ps7_cnt=1,synth_mode=None}";
+  attribute CORE_GENERATION_INFO of design_1 : entity is "design_1,IP_Integrator,{x_ipVendor=xilinx.com,x_ipLibrary=BlockDiagram,x_ipName=design_1,x_ipVersion=1.00.a,x_ipLanguage=VHDL,numBlks=15,numReposBlks=9,numNonXlnxBlks=0,numHierBlks=6,maxHierDepth=0,numSysgenBlks=0,numHlsBlks=0,numHdlrefBlks=0,numPkgbdBlks=0,bdsource=USER,da_axi4_cnt=5,da_board_cnt=6,da_clkrst_cnt=35,da_ps7_cnt=1,synth_mode=None}";
   attribute HW_HANDOFF : string;
   attribute HW_HANDOFF of design_1 : entity is "design_1.hwdef";
 end design_1;
@@ -1776,21 +1775,19 @@ architecture STRUCTURE of design_1 is
     gpio2_io_i : in STD_LOGIC_VECTOR ( 31 downto 0 )
   );
   end component design_1_axi_gpio_1_0;
-  component design_1_QSPI_top_0_0 is
+  component design_1_QSPI_top_0_2 is
   port (
     WR_REG : in STD_LOGIC_VECTOR ( 31 downto 0 );
     RD_REG : out STD_LOGIC_VECTOR ( 31 downto 0 );
     CTL_REG : in STD_LOGIC_VECTOR ( 31 downto 0 );
     STS_REG : out STD_LOGIC_VECTOR ( 31 downto 0 );
-    P_CLK : in STD_LOGIC;
+    S_CLK : in STD_LOGIC;
     QCLK : out STD_LOGIC;
     QD : inout STD_LOGIC_VECTOR ( 3 downto 0 );
-    CS : out STD_LOGIC_VECTOR ( 3 downto 0 );
-    QCLKfb : in STD_LOGIC
+    CS : out STD_LOGIC_VECTOR ( 3 downto 0 )
   );
-  end component design_1_QSPI_top_0_0;
+  end component design_1_QSPI_top_0_2;
   signal Net : STD_LOGIC_VECTOR ( 3 downto 0 );
-  signal QCLKfb_0_1 : STD_LOGIC;
   signal QSPI_top_0_CS : STD_LOGIC_VECTOR ( 3 downto 0 );
   signal QSPI_top_0_QCLK : STD_LOGIC;
   signal QSPI_top_0_RD_REG : STD_LOGIC_VECTOR ( 31 downto 0 );
@@ -1988,7 +1985,6 @@ architecture STRUCTURE of design_1 is
 begin
   CS_0(3 downto 0) <= QSPI_top_0_CS(3 downto 0);
   QCLK_0 <= QSPI_top_0_QCLK;
-  QCLKfb_0_1 <= QCLKfb_0;
   axi_quad_spi_0_SPI_0_IO0_I <= spi_io0_i;
   axi_quad_spi_0_SPI_0_IO1_I <= spi_io1_i;
   axi_quad_spi_0_SPI_0_SCK_I <= spi_sck_i;
@@ -2001,16 +1997,15 @@ begin
   spi_sck_t <= axi_quad_spi_0_SPI_0_SCK_T;
   spi_ss_o(1 downto 0) <= axi_quad_spi_0_SPI_0_SS_O(1 downto 0);
   spi_ss_t <= axi_quad_spi_0_SPI_0_SS_T;
-QSPI_top_0: component design_1_QSPI_top_0_0
+QSPI_top_0: component design_1_QSPI_top_0_2
      port map (
       CS(3 downto 0) => QSPI_top_0_CS(3 downto 0),
       CTL_REG(31 downto 0) => axi_gpio_1_gpio_io_o(31 downto 0),
-      P_CLK => clk_wiz_0_clk_out1,
       QCLK => QSPI_top_0_QCLK,
-      QCLKfb => QCLKfb_0_1,
       QD(3 downto 0) => QD_0(3 downto 0),
       RD_REG(31 downto 0) => QSPI_top_0_RD_REG(31 downto 0),
       STS_REG(31 downto 0) => QSPI_top_0_STS_REG(31 downto 0),
+      S_CLK => processing_system7_0_FCLK_CLK0,
       WR_REG(31 downto 0) => axi_gpio_0_gpio_io_o(31 downto 0)
     );
 axi_gpio_0: component design_1_axi_gpio_0_0

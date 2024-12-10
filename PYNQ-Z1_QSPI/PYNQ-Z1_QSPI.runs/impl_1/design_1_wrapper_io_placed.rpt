@@ -1,7 +1,7 @@
 Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version              : Vivado v.2023.2 (win64) Build 4029153 Fri Oct 13 20:14:34 MDT 2023
-| Date                      : Thu Nov  7 22:42:02 2024
+| Date                      : Sat Dec  7 15:03:25 2024
 | Host                      : LAPTOP-TJAEKEL2 running 64-bit major release  (build 9200)
 | Command                   : report_io -file design_1_wrapper_io_placed.rpt
 | Design                    : design_1_wrapper
@@ -25,7 +25,7 @@ Table of Contents
 +---------------+
 | Total User IO |
 +---------------+
-|           145 |
+|           144 |
 +---------------+
 
 
@@ -361,7 +361,7 @@ Table of Contents
 | U4         | DDR_dq[21]        |            | PS_DDR_DQ21_502         | INOUT       | SSTL15_T_DCI      |         |            | FAST |           DCI SPLIT |            FP_VTT_50 |         | FIXED      | PULLUP    |          |      | SPLIT            |              |                   |              |
 | U5         | CS_0[0]           | High Range | IO_L19N_T3_VREF_13      | OUTPUT      | LVCMOS33          |      13 |         12 | SLOW |                     |            FP_VTT_50 |         | FIXED      |           |          |      | NONE             |              |                   |              |
 | U6         |                   |            | GND                     | GND         |                   |         |            |      |                     |                      |     0.0 |            |           |          |      |                  |              |                   |              |
-| U7         | QCLKfb_0          | High Range | IO_L11P_T1_SRCC_13      | INPUT       | LVCMOS33          |      13 |            |      |                     |                 NONE |         | FIXED      |           |          |      | NONE             |              |                   |              |
+| U7         |                   | High Range | IO_L11P_T1_SRCC_13      | User IO     |                   |      13 |            |      |                     |                      |         |            |           |          |      |                  |              |                   |              |
 | U8         | QD_0[1]           | High Range | IO_L17N_T2_13           | BIDIR       | LVCMOS33          |      13 |         12 | SLOW |                     |            FP_VTT_50 |         | FIXED      |           |          |      | NONE             |              |                   |              |
 | U9         |                   | High Range | IO_L17P_T2_13           | User IO     |                   |      13 |            |      |                     |                      |         |            |           |          |      |                  |              |                   |              |
 | U10        |                   | High Range | IO_L12N_T1_MRCC_13      | User IO     |                   |      13 |            |      |                     |                      |         |            |           |          |      |                  |              |                   |              |

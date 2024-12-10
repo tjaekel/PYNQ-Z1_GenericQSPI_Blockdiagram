@@ -2,7 +2,7 @@
 --Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------
 --Tool Version: Vivado v.2023.2 (win64) Build 4029153 Fri Oct 13 20:14:34 MDT 2023
---Date        : Thu Nov  7 22:36:56 2024
+--Date        : Sat Dec  7 14:59:44 2024
 --Host        : LAPTOP-TJAEKEL2 running 64-bit major release  (build 9200)
 --Command     : generate_target design_1_wrapper.bd
 --Design      : design_1_wrapper
@@ -37,7 +37,6 @@ entity design_1_wrapper is
     FIXED_IO_ps_porb : inout STD_LOGIC;
     FIXED_IO_ps_srstb : inout STD_LOGIC;
     QCLK_0 : out STD_LOGIC;
-    QCLKfb_0 : in STD_LOGIC;
     QD_0 : inout STD_LOGIC_VECTOR ( 3 downto 0 );
     spi_io0_io : inout STD_LOGIC;
     spi_io1_io : inout STD_LOGIC;
@@ -84,8 +83,7 @@ architecture STRUCTURE of design_1_wrapper is
     spi_ss_t : out STD_LOGIC;
     QCLK_0 : out STD_LOGIC;
     QD_0 : inout STD_LOGIC_VECTOR ( 3 downto 0 );
-    CS_0 : out STD_LOGIC_VECTOR ( 3 downto 0 );
-    QCLKfb_0 : in STD_LOGIC
+    CS_0 : out STD_LOGIC_VECTOR ( 3 downto 0 )
   );
   end component design_1;
   component IOBUF is
@@ -138,7 +136,6 @@ design_1_i: component design_1
       FIXED_IO_ps_porb => FIXED_IO_ps_porb,
       FIXED_IO_ps_srstb => FIXED_IO_ps_srstb,
       QCLK_0 => QCLK_0,
-      QCLKfb_0 => QCLKfb_0,
       QD_0(3 downto 0) => QD_0(3 downto 0),
       spi_io0_i => spi_io0_i,
       spi_io0_o => spi_io0_o,
