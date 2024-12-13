@@ -12,7 +12,7 @@
     ** Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
 
 source design_1_wrapper.tcl -notrace
-create_project: Time (s): cpu = 00:00:09 ; elapsed = 00:00:09 . Memory (MB): peak = 556.605 ; gain = 184.145
+create_project: Time (s): cpu = 00:00:07 ; elapsed = 00:00:08 . Memory (MB): peak = 553.953 ; gain = 181.223
 INFO: [IP_Flow 19-234] Refreshing IP repositories
 INFO: [IP_Flow 19-1700] Loaded user IP repository 'c:/Users/tj/Documents/Xilinx_Projects/Generic_QSPI/Generic_QSPI.srcs/sources_1/new'.
 INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'D:/Xilinx/Vivado/2023.2/data/ip'.
@@ -28,9 +28,9 @@ INFO: [Designutils 20-5440] No compile time benefit to using incremental synthes
 INFO: [Designutils 20-4379] Flow is switching to default flow due to incremental criteria not met. If you would like to alter this behaviour and have the flow terminate instead, please set the following parameter config_implementation {autoIncr.Synth.RejectBehavior Terminate}
 INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 2 processes.
 INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
-INFO: [Synth 8-7075] Helper process launched with PID 6784
+INFO: [Synth 8-7075] Helper process launched with PID 23200
 ---------------------------------------------------------------------------------
-Starting RTL Elaboration : Time (s): cpu = 00:00:12 ; elapsed = 00:00:12 . Memory (MB): peak = 1450.512 ; gain = 439.555
+Starting RTL Elaboration : Time (s): cpu = 00:00:11 ; elapsed = 00:00:11 . Memory (MB): peak = 1449.793 ; gain = 439.141
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-638] synthesizing module 'design_1_wrapper' [C:/Users/tj/Documents/Xilinx_Projects/PYNQ-Z1_QSPI/PYNQ-Z1_QSPI.gen/sources_1/bd/design_1/hdl/design_1_wrapper.vhd:48]
 INFO: [Synth 8-3491] module 'design_1' declared at 'c:/Users/tj/Documents/Xilinx_Projects/PYNQ-Z1_QSPI/PYNQ-Z1_QSPI.gen/sources_1/bd/design_1/synth/design_1.vhd:1536' bound to instance 'design_1_i' of component 'design_1' [C:/Users/tj/Documents/Xilinx_Projects/PYNQ-Z1_QSPI/PYNQ-Z1_QSPI.gen/sources_1/bd/design_1/hdl/design_1_wrapper.vhd:114]
@@ -38,24 +38,24 @@ INFO: [Synth 8-638] synthesizing module 'design_1' [c:/Users/tj/Documents/Xilinx
 INFO: [Synth 8-3491] module 'design_1_QSPI_top_0_2' declared at 'c:/Users/tj/Documents/Xilinx_Projects/PYNQ-Z1_QSPI/PYNQ-Z1_QSPI.gen/sources_1/bd/design_1/ip/design_1_QSPI_top_0_2/synth/design_1_QSPI_top_0_2.vhd:56' bound to instance 'QSPI_top_0' of component 'design_1_QSPI_top_0_2' [c:/Users/tj/Documents/Xilinx_Projects/PYNQ-Z1_QSPI/PYNQ-Z1_QSPI.gen/sources_1/bd/design_1/synth/design_1.vhd:2000]
 INFO: [Synth 8-638] synthesizing module 'design_1_QSPI_top_0_2' [c:/Users/tj/Documents/Xilinx_Projects/PYNQ-Z1_QSPI/PYNQ-Z1_QSPI.gen/sources_1/bd/design_1/ip/design_1_QSPI_top_0_2/synth/design_1_QSPI_top_0_2.vhd:69]
 INFO: [Synth 8-3491] module 'QSPI_top' declared at 'c:/Users/tj/Documents/Xilinx_Projects/PYNQ-Z1_QSPI/PYNQ-Z1_QSPI.gen/sources_1/bd/design_1/ipshared/d43a/QSPI_top.vhd:42' bound to instance 'U0' of component 'QSPI_top' [c:/Users/tj/Documents/Xilinx_Projects/PYNQ-Z1_QSPI/PYNQ-Z1_QSPI.gen/sources_1/bd/design_1/ip/design_1_QSPI_top_0_2/synth/design_1_QSPI_top_0_2.vhd:93]
-INFO: [Synth 8-638] synthesizing module 'QSPI_top' [c:/Users/tj/Documents/Xilinx_Projects/PYNQ-Z1_QSPI/PYNQ-Z1_QSPI.gen/sources_1/bd/design_1/ipshared/d43a/QSPI_top.vhd:56]
+INFO: [Synth 8-638] synthesizing module 'QSPI_top' [c:/Users/tj/Documents/Xilinx_Projects/PYNQ-Z1_QSPI/PYNQ-Z1_QSPI.gen/sources_1/bd/design_1/ipshared/d43a/QSPI_top.vhd:71]
 	Parameter DRIVE bound to: 12 - type: integer 
 	Parameter IOSTANDARD bound to: DEFAULT - type: string 
 	Parameter SLEW bound to: SLOW - type: string 
-INFO: [Synth 8-113] binding component instance 'IOBUF_QD0' to cell 'IOBUF' [c:/Users/tj/Documents/Xilinx_Projects/PYNQ-Z1_QSPI/PYNQ-Z1_QSPI.gen/sources_1/bd/design_1/ipshared/d43a/QSPI_top.vhd:72]
+INFO: [Synth 8-113] binding component instance 'IOBUF_QD0' to cell 'IOBUF' [c:/Users/tj/Documents/Xilinx_Projects/PYNQ-Z1_QSPI/PYNQ-Z1_QSPI.gen/sources_1/bd/design_1/ipshared/d43a/QSPI_top.vhd:91]
 	Parameter DRIVE bound to: 12 - type: integer 
 	Parameter IOSTANDARD bound to: DEFAULT - type: string 
 	Parameter SLEW bound to: SLOW - type: string 
-INFO: [Synth 8-113] binding component instance 'IOBUF_QD1' to cell 'IOBUF' [c:/Users/tj/Documents/Xilinx_Projects/PYNQ-Z1_QSPI/PYNQ-Z1_QSPI.gen/sources_1/bd/design_1/ipshared/d43a/QSPI_top.vhd:84]
+INFO: [Synth 8-113] binding component instance 'IOBUF_QD1' to cell 'IOBUF' [c:/Users/tj/Documents/Xilinx_Projects/PYNQ-Z1_QSPI/PYNQ-Z1_QSPI.gen/sources_1/bd/design_1/ipshared/d43a/QSPI_top.vhd:103]
 	Parameter DRIVE bound to: 12 - type: integer 
 	Parameter IOSTANDARD bound to: DEFAULT - type: string 
 	Parameter SLEW bound to: SLOW - type: string 
-INFO: [Synth 8-113] binding component instance 'IOBUF_QD2' to cell 'IOBUF' [c:/Users/tj/Documents/Xilinx_Projects/PYNQ-Z1_QSPI/PYNQ-Z1_QSPI.gen/sources_1/bd/design_1/ipshared/d43a/QSPI_top.vhd:96]
+INFO: [Synth 8-113] binding component instance 'IOBUF_QD2' to cell 'IOBUF' [c:/Users/tj/Documents/Xilinx_Projects/PYNQ-Z1_QSPI/PYNQ-Z1_QSPI.gen/sources_1/bd/design_1/ipshared/d43a/QSPI_top.vhd:115]
 	Parameter DRIVE bound to: 12 - type: integer 
 	Parameter IOSTANDARD bound to: DEFAULT - type: string 
 	Parameter SLEW bound to: SLOW - type: string 
-INFO: [Synth 8-113] binding component instance 'IOBUF_QD3' to cell 'IOBUF' [c:/Users/tj/Documents/Xilinx_Projects/PYNQ-Z1_QSPI/PYNQ-Z1_QSPI.gen/sources_1/bd/design_1/ipshared/d43a/QSPI_top.vhd:108]
-INFO: [Synth 8-256] done synthesizing module 'QSPI_top' (0#1) [c:/Users/tj/Documents/Xilinx_Projects/PYNQ-Z1_QSPI/PYNQ-Z1_QSPI.gen/sources_1/bd/design_1/ipshared/d43a/QSPI_top.vhd:56]
+INFO: [Synth 8-113] binding component instance 'IOBUF_QD3' to cell 'IOBUF' [c:/Users/tj/Documents/Xilinx_Projects/PYNQ-Z1_QSPI/PYNQ-Z1_QSPI.gen/sources_1/bd/design_1/ipshared/d43a/QSPI_top.vhd:127]
+INFO: [Synth 8-256] done synthesizing module 'QSPI_top' (0#1) [c:/Users/tj/Documents/Xilinx_Projects/PYNQ-Z1_QSPI/PYNQ-Z1_QSPI.gen/sources_1/bd/design_1/ipshared/d43a/QSPI_top.vhd:71]
 INFO: [Synth 8-256] done synthesizing module 'design_1_QSPI_top_0_2' (0#1) [c:/Users/tj/Documents/Xilinx_Projects/PYNQ-Z1_QSPI/PYNQ-Z1_QSPI.gen/sources_1/bd/design_1/ip/design_1_QSPI_top_0_2/synth/design_1_QSPI_top_0_2.vhd:69]
 INFO: [Synth 8-3491] module 'design_1_axi_gpio_0_0' declared at 'c:/Users/tj/Documents/Xilinx_Projects/PYNQ-Z1_QSPI/PYNQ-Z1_QSPI.gen/sources_1/bd/design_1/ip/design_1_axi_gpio_0_0/synth/design_1_axi_gpio_0_0.vhd:59' bound to instance 'axi_gpio_0' of component 'design_1_axi_gpio_0_0' [c:/Users/tj/Documents/Xilinx_Projects/PYNQ-Z1_QSPI/PYNQ-Z1_QSPI.gen/sources_1/bd/design_1/synth/design_1.vhd:2011]
 INFO: [Synth 8-638] synthesizing module 'design_1_axi_gpio_0_0' [c:/Users/tj/Documents/Xilinx_Projects/PYNQ-Z1_QSPI/PYNQ-Z1_QSPI.gen/sources_1/bd/design_1/ip/design_1_axi_gpio_0_0/synth/design_1_axi_gpio_0_0.vhd:85]
@@ -1323,20 +1323,20 @@ WARNING: [Synth 8-7129] Port m_axi_ruser[1] in module axi_crossbar_v2_1_30_axi_c
 WARNING: [Synth 8-7129] Port m_axi_ruser[0] in module axi_crossbar_v2_1_30_axi_crossbar is either unconnected or has no load
 INFO: [Common 17-14] Message 'Synth 8-7129' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
 ---------------------------------------------------------------------------------
-Finished RTL Elaboration : Time (s): cpu = 00:00:28 ; elapsed = 00:00:33 . Memory (MB): peak = 1803.250 ; gain = 792.293
+Finished RTL Elaboration : Time (s): cpu = 00:00:25 ; elapsed = 00:00:30 . Memory (MB): peak = 1801.754 ; gain = 791.102
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:28 ; elapsed = 00:00:34 . Memory (MB): peak = 1803.250 ; gain = 792.293
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:25 ; elapsed = 00:00:30 . Memory (MB): peak = 1801.754 ; gain = 791.102
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:28 ; elapsed = 00:00:34 . Memory (MB): peak = 1803.250 ; gain = 792.293
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:25 ; elapsed = 00:00:30 . Memory (MB): peak = 1801.754 ; gain = 791.102
 ---------------------------------------------------------------------------------
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.374 . Memory (MB): peak = 1803.250 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.336 . Memory (MB): peak = 1801.754 ; gain = 0.000
 INFO: [Netlist 29-17] Analyzing 1036 Unisim elements for replacement
-INFO: [Netlist 29-28] Unisim Transformation completed in 1 CPU seconds
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
 INFO: [Project 1-570] Preparing netlist for logic optimization
 
 Processing XDC Constraints
@@ -1389,7 +1389,7 @@ Resolution: To avoid this warning, move constraints listed in [.Xil/design_1_wra
 INFO: [Project 1-1714] 14 XPM XDC files have been applied to the design.
 Completed Processing XDC Constraints
 
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.005 . Memory (MB): peak = 1898.766 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.005 . Memory (MB): peak = 1885.270 ; gain = 0.000
 INFO: [Project 1-111] Unisim Transformation Summary:
   A total of 1035 instances were transformed.
   FD => FDRE: 11 instances
@@ -1399,18 +1399,18 @@ INFO: [Project 1-111] Unisim Transformation Summary:
   SRL16 => SRL16E: 1 instance 
 
 The system cannot find the path specified.
-Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.122 . Memory (MB): peak = 1898.766 ; gain = 0.000
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.108 . Memory (MB): peak = 1885.270 ; gain = 0.000
 INFO: [Designutils 20-5440] No compile time benefit to using incremental synthesis; A full resynthesis will be run
 INFO: [Designutils 20-4379] Flow is switching to default flow due to incremental criteria not met. If you would like to alter this behaviour and have the flow terminate instead, please set the following parameter config_implementation {autoIncr.Synth.RejectBehavior Terminate}
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:00:44 ; elapsed = 00:00:49 . Memory (MB): peak = 1898.766 ; gain = 887.809
+Finished Constraint Validation : Time (s): cpu = 00:00:39 ; elapsed = 00:00:44 . Memory (MB): peak = 1885.270 ; gain = 874.617
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
 ---------------------------------------------------------------------------------
 Loading part: xc7z020clg400-1
 ---------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:00:44 ; elapsed = 00:00:49 . Memory (MB): peak = 1898.766 ; gain = 887.809
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:39 ; elapsed = 00:00:44 . Memory (MB): peak = 1885.270 ; gain = 874.617
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying 'set_property' XDC Constraints
@@ -1447,12 +1447,12 @@ Applied set_property KEEP_HIERARCHY = SOFT for design_1_i/axi_quad_spi_0/U0/\NO_
 Applied set_property KEEP_HIERARCHY = SOFT for design_1_i/axi_quad_spi_0/U0/\NO_DUAL_QUAD_MODE.QSPI_NORMAL /\QSPI_LEGACY_MD_GEN.QSPI_CORE_INTERFACE_I /\FIFO_EXISTS.RX_FIFO_II . (constraint file  auto generated constraint).
 Applied set_property KEEP_HIERARCHY = SOFT for design_1_i/axi_quad_spi_0/U0/\NO_DUAL_QUAD_MODE.QSPI_NORMAL /\QSPI_LEGACY_MD_GEN.QSPI_CORE_INTERFACE_I /\FIFO_EXISTS.TX_FIFO_II /\xpm_fifo_instance.xpm_fifo_async_inst . (constraint file  auto generated constraint).
 ---------------------------------------------------------------------------------
-Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:45 ; elapsed = 00:00:50 . Memory (MB): peak = 1898.766 ; gain = 887.809
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:40 ; elapsed = 00:00:45 . Memory (MB): peak = 1885.270 ; gain = 874.617
 ---------------------------------------------------------------------------------
 WARNING: [Synth 8-3936] Found unconnected internal register 'clkout0_reg_reg' and it is trimmed from '32' to '18' bits. [c:/Users/tj/Documents/Xilinx_Projects/PYNQ-Z1_QSPI/PYNQ-Z1_QSPI.gen/sources_1/bd/design_1/ip/design_1_clk_wiz_0_0/design_1_clk_wiz_0_0_clk_wiz_drp.vhd:433]
 WARNING: [Synth 8-3936] Found unconnected internal register 'clkfbout_reg_reg' and it is trimmed from '32' to '26' bits. [c:/Users/tj/Documents/Xilinx_Projects/PYNQ-Z1_QSPI/PYNQ-Z1_QSPI.gen/sources_1/bd/design_1/ip/design_1_clk_wiz_0_0/design_1_clk_wiz_0_0_clk_wiz_drp.vhd:430]
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:51 ; elapsed = 00:00:57 . Memory (MB): peak = 1898.766 ; gain = 887.809
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:46 ; elapsed = 00:00:52 . Memory (MB): peak = 1885.270 ; gain = 874.617
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start RTL Component Statistics 
@@ -1500,8 +1500,8 @@ Detailed RTL Component Info :
 	                5 Bit    Registers := 40    
 	                4 Bit    Registers := 42    
 	                3 Bit    Registers := 8     
-	                2 Bit    Registers := 37    
-	                1 Bit    Registers := 454   
+	                2 Bit    Registers := 38    
+	                1 Bit    Registers := 455   
 +---Multipliers : 
 	               4x32  Multipliers := 1     
 	               6x32  Multipliers := 1     
@@ -1514,9 +1514,10 @@ Detailed RTL Component Info :
 	   3 Input   39 Bit        Muxes := 6     
 	   2 Input   39 Bit        Muxes := 6     
 	   2 Input   36 Bit        Muxes := 1     
-	   7 Input   32 Bit        Muxes := 4     
+	   2 Input   32 Bit        Muxes := 23    
+	   6 Input   32 Bit        Muxes := 2     
 	   8 Input   32 Bit        Muxes := 1     
-	   2 Input   32 Bit        Muxes := 21    
+	   7 Input   32 Bit        Muxes := 1     
 	   5 Input   32 Bit        Muxes := 2     
 	  10 Input   16 Bit        Muxes := 1     
 	   2 Input   14 Bit        Muxes := 1     
@@ -1529,31 +1530,30 @@ Detailed RTL Component Info :
 	  10 Input    7 Bit        Muxes := 1     
 	   2 Input    6 Bit        Muxes := 28    
 	  10 Input    6 Bit        Muxes := 1     
-	   7 Input    5 Bit        Muxes := 1     
+	   6 Input    5 Bit        Muxes := 1     
 	  10 Input    5 Bit        Muxes := 1     
 	   2 Input    5 Bit        Muxes := 9     
 	   3 Input    5 Bit        Muxes := 2     
-	  10 Input    4 Bit        Muxes := 1     
+	   9 Input    4 Bit        Muxes := 1     
 	   2 Input    4 Bit        Muxes := 13    
-	   8 Input    3 Bit        Muxes := 1     
-	   2 Input    3 Bit        Muxes := 4     
-	   7 Input    3 Bit        Muxes := 1     
+	   2 Input    3 Bit        Muxes := 5     
+	   7 Input    3 Bit        Muxes := 2     
 	   3 Input    3 Bit        Muxes := 4     
 	   4 Input    3 Bit        Muxes := 2     
+	   2 Input    2 Bit        Muxes := 25    
 	   7 Input    2 Bit        Muxes := 4     
-	   2 Input    2 Bit        Muxes := 24    
 	   4 Input    2 Bit        Muxes := 5     
 	   6 Input    2 Bit        Muxes := 2     
 	   5 Input    2 Bit        Muxes := 3     
 	   3 Input    2 Bit        Muxes := 1     
 	   8 Input    2 Bit        Muxes := 1     
-	   2 Input    1 Bit        Muxes := 352   
-	   7 Input    1 Bit        Muxes := 10    
+	   2 Input    1 Bit        Muxes := 357   
+	   7 Input    1 Bit        Muxes := 1     
+	   6 Input    1 Bit        Muxes := 10    
+	   5 Input    1 Bit        Muxes := 44    
+	   3 Input    1 Bit        Muxes := 5     
 	  10 Input    1 Bit        Muxes := 9     
-	   5 Input    1 Bit        Muxes := 43    
 	   4 Input    1 Bit        Muxes := 15    
-	   6 Input    1 Bit        Muxes := 4     
-	   3 Input    1 Bit        Muxes := 2     
 ---------------------------------------------------------------------------------
 Finished RTL Component Statistics 
 ---------------------------------------------------------------------------------
@@ -1672,7 +1672,7 @@ INFO: [Synth 8-3332] Sequential element (GENERATE_LEVEL_P_S_CDC.MULTI_BIT.FOR_CR
 INFO: [Synth 8-3332] Sequential element (GENERATE_LEVEL_P_S_CDC.MULTI_BIT.FOR_CROSS_PLEVEL_IN2SCNDRY_bus_d4[3].CROSS2_PLEVEL_IN2SCNDRY_s_level_out_bus_d4) is unused and will be removed from module cdc_sync__1.
 INFO: [Common 17-14] Message 'Synth 8-3332' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
 ---------------------------------------------------------------------------------
-Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:01:19 ; elapsed = 00:01:24 . Memory (MB): peak = 1898.766 ; gain = 887.809
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:01:14 ; elapsed = 00:01:20 . Memory (MB): peak = 1885.270 ; gain = 874.617
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start ROM, RAM, DSP, Shift Register and Retiming Reporting
@@ -1694,7 +1694,7 @@ Finished ROM, RAM, DSP, Shift Register and Retiming Reporting
 Start Applying XDC Timing Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Applying XDC Timing Constraints : Time (s): cpu = 00:01:26 ; elapsed = 00:01:32 . Memory (MB): peak = 1898.766 ; gain = 887.809
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:01:22 ; elapsed = 00:01:28 . Memory (MB): peak = 1885.270 ; gain = 874.617
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start ROM, RAM, DSP, Shift Register and Retiming Reporting
@@ -1715,7 +1715,7 @@ Finished ROM, RAM, DSP, Shift Register and Retiming Reporting
 Start Technology Mapping
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:01:35 ; elapsed = 00:01:42 . Memory (MB): peak = 1898.766 ; gain = 887.809
+Finished Technology Mapping : Time (s): cpu = 00:01:31 ; elapsed = 00:01:37 . Memory (MB): peak = 1885.270 ; gain = 874.617
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start IO Insertion
@@ -1727,19 +1727,19 @@ Start Final Netlist Cleanup
 Finished Final Netlist Cleanup
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:01:41 ; elapsed = 00:01:47 . Memory (MB): peak = 1898.766 ; gain = 887.809
+Finished IO Insertion : Time (s): cpu = 00:01:36 ; elapsed = 00:01:43 . Memory (MB): peak = 1885.270 ; gain = 874.617
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:01:41 ; elapsed = 00:01:48 . Memory (MB): peak = 1898.766 ; gain = 887.809
+Finished Renaming Generated Instances : Time (s): cpu = 00:01:36 ; elapsed = 00:01:43 . Memory (MB): peak = 1885.270 ; gain = 874.617
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:01:41 ; elapsed = 00:01:48 . Memory (MB): peak = 1898.766 ; gain = 887.809
+Finished Handling Custom Attributes : Time (s): cpu = 00:01:36 ; elapsed = 00:01:43 . Memory (MB): peak = 1885.270 ; gain = 874.617
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start ROM, RAM, DSP, Shift Register and Retiming Reporting
@@ -1775,12 +1775,12 @@ Report Cell Usage:
 |1     |BIBUF      |   130|
 |2     |BUFG       |     3|
 |3     |CARRY4     |    76|
-|4     |LUT1       |    71|
-|5     |LUT2       |   564|
-|6     |LUT3       |   574|
-|7     |LUT4       |   342|
-|8     |LUT5       |   450|
-|9     |LUT6       |  1003|
+|4     |LUT1       |    70|
+|5     |LUT2       |   561|
+|6     |LUT3       |   603|
+|7     |LUT4       |   326|
+|8     |LUT5       |   479|
+|9     |LUT6       |  1006|
 |10    |MMCME2_ADV |     1|
 |11    |MUXF7      |   135|
 |12    |MUXF8      |    28|
@@ -1792,27 +1792,27 @@ Report Cell Usage:
 |18    |SRLC32E    |    47|
 |19    |FD         |     6|
 |20    |FDR        |   205|
-|21    |FDRE       |  3170|
+|21    |FDRE       |  3173|
 |22    |FDSE       |   167|
 |23    |IBUF       |     1|
 |24    |IOBUF      |     9|
 |25    |OBUF       |     5|
 +------+-----------+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:01:41 ; elapsed = 00:01:48 . Memory (MB): peak = 1898.766 ; gain = 887.809
+Finished Writing Synthesis Report : Time (s): cpu = 00:01:36 ; elapsed = 00:01:43 . Memory (MB): peak = 1885.270 ; gain = 874.617
 ---------------------------------------------------------------------------------
 Synthesis finished with 0 errors, 0 critical warnings and 7 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:01:05 ; elapsed = 00:01:41 . Memory (MB): peak = 1898.766 ; gain = 792.293
-Synthesis Optimization Complete : Time (s): cpu = 00:01:41 ; elapsed = 00:01:48 . Memory (MB): peak = 1898.766 ; gain = 887.809
+Synthesis Optimization Runtime : Time (s): cpu = 00:01:05 ; elapsed = 00:01:37 . Memory (MB): peak = 1885.270 ; gain = 791.102
+Synthesis Optimization Complete : Time (s): cpu = 00:01:37 ; elapsed = 00:01:43 . Memory (MB): peak = 1885.270 ; gain = 874.617
 INFO: [Project 1-571] Translating synthesized netlist
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.187 . Memory (MB): peak = 1898.766 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.190 . Memory (MB): peak = 1885.270 ; gain = 0.000
 INFO: [Netlist 29-17] Analyzing 467 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
 INFO: [Project 1-570] Preparing netlist for logic optimization
 WARNING: [Opt 31-32] Removing redundant IBUF since it is not being driven by a top-level port. design_1_i/clk_wiz_0/inst/CLK_CORE_DRP_I/clk_inst/clkin1_ibufg 
 Resolution: The tool has removed redundant IBUF. To resolve this warning, check for redundant IBUF in the input design.
 INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.003 . Memory (MB): peak = 1898.766 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.004 . Memory (MB): peak = 1885.270 ; gain = 0.000
 INFO: [Project 1-111] Unisim Transformation Summary:
   A total of 227 instances were transformed.
   FD => FDRE: 6 instances
@@ -1823,12 +1823,12 @@ INFO: [Project 1-111] Unisim Transformation Summary:
   SRL16 => SRL16E: 1 instance 
 
 The system cannot find the path specified.
-Synth Design complete | Checksum: 4a1ffbb6
+Synth Design complete | Checksum: af82807f
 INFO: [Common 17-83] Releasing license: Synthesis
 619 Infos, 305 Warnings, 0 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-synth_design: Time (s): cpu = 00:01:48 ; elapsed = 00:01:56 . Memory (MB): peak = 1898.766 ; gain = 1312.625
-Write ShapeDB Complete: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.021 . Memory (MB): peak = 1898.766 ; gain = 0.000
+synth_design: Time (s): cpu = 00:01:44 ; elapsed = 00:01:51 . Memory (MB): peak = 1885.270 ; gain = 1300.207
+Write ShapeDB Complete: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.019 . Memory (MB): peak = 1885.270 ; gain = 0.000
 INFO: [Common 17-1381] The checkpoint 'C:/Users/tj/Documents/Xilinx_Projects/PYNQ-Z1_QSPI/PYNQ-Z1_QSPI.runs/synth_1/design_1_wrapper.dcp' has been generated.
 INFO: [runtcl-4] Executing : report_utilization -file design_1_wrapper_utilization_synth.rpt -pb design_1_wrapper_utilization_synth.pb
-INFO: [Common 17-206] Exiting Vivado at Sat Dec  7 15:02:20 2024...
+INFO: [Common 17-206] Exiting Vivado at Thu Dec 12 14:19:53 2024...
