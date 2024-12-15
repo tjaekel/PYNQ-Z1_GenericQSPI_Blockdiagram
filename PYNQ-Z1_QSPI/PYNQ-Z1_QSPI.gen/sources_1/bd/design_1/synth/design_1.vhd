@@ -2,7 +2,7 @@
 --Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------
 --Tool Version: Vivado v.2023.2 (win64) Build 4029153 Fri Oct 13 20:14:34 MDT 2023
---Date        : Thu Dec 12 14:17:25 2024
+--Date        : Sat Dec 14 19:02:55 2024
 --Host        : LAPTOP-TJAEKEL2 running 64-bit major release  (build 9200)
 --Command     : generate_target design_1.bd
 --Design      : design_1
@@ -1775,7 +1775,7 @@ architecture STRUCTURE of design_1 is
     gpio2_io_i : in STD_LOGIC_VECTOR ( 31 downto 0 )
   );
   end component design_1_axi_gpio_1_0;
-  component design_1_QSPI_top_0_2 is
+  component design_1_QSPI_top_0_4 is
   port (
     WR_REG : in STD_LOGIC_VECTOR ( 31 downto 0 );
     RD_REG : out STD_LOGIC_VECTOR ( 31 downto 0 );
@@ -1786,7 +1786,7 @@ architecture STRUCTURE of design_1 is
     QD : inout STD_LOGIC_VECTOR ( 3 downto 0 );
     CS : out STD_LOGIC_VECTOR ( 3 downto 0 )
   );
-  end component design_1_QSPI_top_0_2;
+  end component design_1_QSPI_top_0_4;
   signal Net : STD_LOGIC_VECTOR ( 3 downto 0 );
   signal QSPI_top_0_CS : STD_LOGIC_VECTOR ( 3 downto 0 );
   signal QSPI_top_0_QCLK : STD_LOGIC;
@@ -1997,7 +1997,7 @@ begin
   spi_sck_t <= axi_quad_spi_0_SPI_0_SCK_T;
   spi_ss_o(1 downto 0) <= axi_quad_spi_0_SPI_0_SS_O(1 downto 0);
   spi_ss_t <= axi_quad_spi_0_SPI_0_SS_T;
-QSPI_top_0: component design_1_QSPI_top_0_2
+QSPI_top_0: component design_1_QSPI_top_0_4
      port map (
       CS(3 downto 0) => QSPI_top_0_CS(3 downto 0),
       CTL_REG(31 downto 0) => axi_gpio_1_gpio_io_o(31 downto 0),

@@ -1,6 +1,16 @@
 # Copyright (C) 2022 Xilinx, Inc
 # SPDX-License-Identifier: BSD-3-Clause
 
+#for 100MHz
+set period 10.0
+set tsu 1.0
+set th 1.0
+
+# Define input delays
+set half_period [expr $period/2]
+set in_max_dly [expr $half_period - $tsu]
+set in_min_dly [expr $th - $half_period]
+
 ## Switches
 #set_property -dict {PACKAGE_PIN M20 IOSTANDARD LVCMOS33} [get_ports {sws_2bits_tri_i[0]}]
 #set_property -dict {PACKAGE_PIN M19 IOSTANDARD LVCMOS33} [get_ports {sws_2bits_tri_i[1]}]
@@ -113,6 +123,15 @@ set_property -dict {PACKAGE_PIN U5  IOSTANDARD LVCMOS33} [get_ports {CS_0[0]}]
 set_property -dict {PACKAGE_PIN V5  IOSTANDARD LVCMOS33} [get_ports {CS_0[1]}]
 set_property -dict {PACKAGE_PIN V6  IOSTANDARD LVCMOS33} [get_ports {CS_0[2]}]
 set_property -dict {PACKAGE_PIN V13 IOSTANDARD LVCMOS33} [get_ports {CS_0[3]}]
+
+#set_input_delay -max $in_max_dly [get_ports QD_0[*]]
+#set_input_delay -min $in_min_dly [get_ports QD_0[*]]
+#set_output_delay -max $in_max_dly [get_ports QD_0[*]]
+#set_output_delay -min $in_min_dly [get_ports QD_0[*]]
+#set_output_delay -max $in_max_dly [get_ports CS_0[*]]
+#set_output_delay -min $in_min_dly [get_ports CS_0[*]]
+#set_output_delay -max $in_max_dly [get_ports QCLK_0]
+#set_output_delay -min $in_min_dly [get_ports QCLK_0]
 
 ## Arduino digital
 #set_property -dict {PACKAGE_PIN T14 IOSTANDARD LVCMOS33} [get_ports {arduino_gpio_tri_io[0]}]

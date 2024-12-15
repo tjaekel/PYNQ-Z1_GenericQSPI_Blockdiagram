@@ -6,11 +6,12 @@
 
 /*
  * compile this code as shared libary:
- * 1: gcc -fpic -c -Wall <code.c>
- * 2: gcc -shared -o <libcode.so> <code.o>
+ * 1: gcc -fpic -Ofast -flto -fomit-frame-pointer -c -Wall Generic_QSPI.c
+ * 2: gcc -shared -o libGeneric_QSPI.so -flto Generic_QSPI.o
  */
 
 #undef WITH_FLOW_CONTROL
+//use WITH_FLOW_CONTROL if QSPI slower as 16.667MHz (CLK_DIV = 2)
 //#define WITH_FLOW_CONTROL
 //RD is one word behind without FLOW_CONTROL!
 
@@ -23,13 +24,12 @@ void* mapped_base1;
 int Gdiv = 0;
 unsigned int TRG_CNT = 0;
 
-         unsigned int* reg_ptrWRDATA   = NULL;
-volatile unsigned int* reg_ptrRDDATA   = NULL;
-         unsigned int* reg_ptrCTL      = NULL; 
-volatile unsigned int* reg_ptrSTS      = NULL;
+volatile unsigned int* reg_ptr0	= NULL;
+volatile unsigned int* reg_ptr1 = NULL;
+
 /* volatile is very important! */
       
-static unsigned int trigger_cnt(int inc)
+inline unsigned int trigger_cnt(int inc)
 {
 	if (inc)
 		TRG_CNT++;
@@ -63,56 +63,47 @@ unsigned int C_QSPI_Init(int div)
 		return 2;
 	}
 
-	reg_ptrWRDATA = (unsigned int*)(mapped_base0 + 0);	//GPIO0 pointer
-	reg_ptrRDDATA = (unsigned int*)(mapped_base0 + 8);	//GPIO0 pointer
-	reg_ptrCTL    = (unsigned int*)(mapped_base1 + 0);	//GPIO1 pointer
-	reg_ptrSTS    = (unsigned int*)(mapped_base1 + 8);	//GPIO1 pointer
+	reg_ptr0 = (unsigned int*)(mapped_base0);	//GPIO0 pointer
+	reg_ptr1 = (unsigned int*)(mapped_base1);	//GPIO1 pointer
 	Gdiv = div << 8;
-	*reg_ptrCTL = 0xF | Gdiv;		//all CSn inactive
+	*reg_ptr1 = 0xF | Gdiv;				//all CSn inactive
 	TRG_CNT = 0;
 	return 0;
 }
 
 void C_QSPI_Deinit(void)
 {
-	*reg_ptrCTL = 0x0000000F | Gdiv;	//all CSn inactive
+	*reg_ptr1 = 0x0000000F | Gdiv;			//all CSn inactive
 	munmap(mapped_base0, 16);
 	munmap(mapped_base1, 16);
 	close(fd0);
 	close(fd1);
 
 
-	reg_ptrWRDATA = NULL;
-	reg_ptrRDDATA = NULL;
-	reg_ptrCTL    = NULL;
-	reg_ptrSTS    = NULL;
-}
-
-unsigned int C_QSPI_32BitWrite(unsigned int val)
-{
-	*reg_ptrWRDATA = val;
-	*reg_ptrCTL = 0x0000000E | Gdiv | trigger_cnt(1);
-
-	return val;
+	reg_ptr0 = NULL;
+	reg_ptr1 = NULL;
 }
 
 unsigned int C_QSPI_Write(unsigned int *val, int len)
 {
-	*reg_ptrWRDATA = *val++;	//32bit CMD, encode properly for single lane
-	*reg_ptrCTL = 0x0000000E | Gdiv | trigger_cnt(1);
-	*reg_ptrWRDATA = *val++;	//32bit ADDR
-	*reg_ptrCTL = 0x0000000E | Gdiv | trigger_cnt(1);
-	*reg_ptrWRDATA = *val++;	//24bit ALT
-	*reg_ptrCTL = 0x0000001E | Gdiv | trigger_cnt(1);
+	volatile register unsigned int *p0 = reg_ptr0;
+	volatile register unsigned int *p1 = reg_ptr1;
+
+	*p0 = *val++;	//32bit CMD, encode properly for single lane
+	*p1 = 0x0000000E | Gdiv | trigger_cnt(1);
+	*p0 = *val++;	//32bit ADDR
+	*p1 = 0x0000000E | Gdiv | trigger_cnt(1);
+	*p0 = *val++;	//24bit ALT
+	*p1 = 0x0000001E | Gdiv | trigger_cnt(1);
 	len -= 3;
 	while (len--)
 	{
-		*reg_ptrWRDATA = *val++;
+		*p0 = *val++;
 		//data write part: byte endian flip
-		*reg_ptrCTL = 0x0000008E | Gdiv | trigger_cnt(1);
+		*p1 = 0x0000008E | Gdiv | trigger_cnt(1);
 	}
 	
-	*reg_ptrCTL = 0x0000000F | Gdiv | trigger_cnt(0); //deselect CSn
+	*p1 = 0x0000000F | Gdiv | trigger_cnt(0); //deselect CSn
 	TRG_CNT = 0;
 
 	return 1;
@@ -120,65 +111,77 @@ unsigned int C_QSPI_Write(unsigned int *val, int len)
 
 unsigned int  C_QSPI_Read(unsigned int *wrVal, unsigned int *rdVal, int rdLen)
 {
-#ifdef WITH_FLOW_CONTROL
+
+	volatile register unsigned int *p0 = reg_ptr0;
+	volatile register unsigned int *p1 = reg_ptr1;
 	volatile unsigned int sts = 0;
 	/* volatile is important! */
-#endif
-	//CMD: 8bit single lane - encode properly the 32bit value 
-	*reg_ptrWRDATA = *wrVal++;
-	*reg_ptrCTL = 0x0000000E | Gdiv | trigger_cnt(1);
-	//ADDR: TL
-	*reg_ptrWRDATA = *wrVal++;
-	*reg_ptrCTL = 0x0000000E | Gdiv | trigger_cnt(1);
-	//ALT: 24bit ALT word
-	*reg_ptrWRDATA = *wrVal++;
-	*reg_ptrCTL = 0x0000001E | Gdiv | trigger_cnt(1);
-	//TA: 2bit TurnAround
-	*reg_ptrCTL = 0x0000002E | Gdiv | trigger_cnt(1);
 
+	//CMD: 8bit single lane - encode properly the 32bit value 
+	*p0 = *wrVal++;
+	*p1 = 0x0000000E | Gdiv | trigger_cnt(1);
+	//ADDR: TL
+	*p0 = *wrVal++;
+	*p1 = 0x0000000E | Gdiv | trigger_cnt(1);
+	//ALT: 24bit ALT word plus 2bit TA
+	*p0 = *wrVal++;
+	*p1 = 0x0000003E | Gdiv | trigger_cnt(1);
+	
+#if 1
+	//it does not fix issue that 1st RD is wrong
 	//do {
-	//	asm("nop");
-	//	sts = *reg_ptr3;
+		sts = *(p1 + 2);
 	//} while ( ! (sts & 0x1));
+#endif
+
+#if 0
+	{
+		int i;
+		for (i = 0; i < 500; i++)
+			asm("nop");
+		sts = *(p1 + 2);
+		//we get 1 for status but still wrong
+	}
+#endif
 
 	//RD loop:
+#if 1
+	//this fixes the issue with 1st RD wrong - BUT WHY?
 	{
 		//flip byte endian
-		*reg_ptrCTL = 0x000000CE | Gdiv | trigger_cnt(1);
+		*p1 = 0x000000CE | Gdiv | trigger_cnt(1);
 
-#ifdef WITH_FLOW_CONTROL
 		//important to do! - BUT WHY?
-		//this creates a larger gap on first RD word
+		//this creates a larger gap after first RD word
 		do {
-			sts = *reg_ptrSTS;
+			sts = *(p1 + 2);
 		} while ( ! (sts & 0x1));
-#endif
 
-		*rdVal++  = *reg_ptrRDDATA;
+		*rdVal++  = *(p0 + 2);
 		rdLen--;
 	}
+#endif
 
 	while(rdLen--)
 	{
 		//flip byte endian
-		*reg_ptrCTL = 0x000000CE | Gdiv | trigger_cnt(1);
+		*p1 = 0x000000CE | Gdiv | trigger_cnt(1);
 
-/*
 #ifdef WITH_FLOW_CONTROL
 		//important to do! or see above: now faster on following words
 		do {
-			sts = *reg_ptrSTS;
+			sts = *(p1 + 2);
 		} while ( ! (sts & 0x1));
 #endif
-*/
 
-		*rdVal++  = *reg_ptrRDDATA;
+
+		*rdVal++  = *(p0 + 2);
 	}
 
-	*reg_ptrCTL = 0x0000000F | Gdiv | trigger_cnt(0);	//deselect CSn
+	*p1 = 0x0000000F | Gdiv | trigger_cnt(0);	//deselect CSn
 	TRG_CNT = 0;
 
-#ifdef WITH_FLOW_CONTROL
+#if 1
 	return sts;
 #else
 	return 1;

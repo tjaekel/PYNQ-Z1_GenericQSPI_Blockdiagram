@@ -2810,8 +2810,8 @@
       "QSPI_top_0": {
         "vlnv": "xilinx.com:user:QSPI_top:1.3",
         "ip_revision": "1",
-        "xci_name": "design_1_QSPI_top_0_2",
-        "xci_path": "ip\\design_1_QSPI_top_0_2\\design_1_QSPI_top_0_2.xci",
+        "xci_name": "design_1_QSPI_top_0_4",
+        "xci_path": "ip\\design_1_QSPI_top_0_4\\design_1_QSPI_top_0_4.xci",
         "inst_hier_path": "QSPI_top_0"
       }
     },

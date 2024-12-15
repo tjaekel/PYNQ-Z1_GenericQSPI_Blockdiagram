@@ -163,7 +163,7 @@ vcom -work xil_defaultlib  -93  \
 "../../../bd/design_1/ip/design_1_axi_gpio_0_0/sim/design_1_axi_gpio_0_0.vhd" \
 "../../../bd/design_1/ip/design_1_axi_gpio_1_0/sim/design_1_axi_gpio_1_0.vhd" \
 "../../../bd/design_1/ipshared/d43a/QSPI_top.vhd" \
-"../../../bd/design_1/ip/design_1_QSPI_top_0_2/sim/design_1_QSPI_top_0_2.vhd" \
+"../../../bd/design_1/ip/design_1_QSPI_top_0_4/sim/design_1_QSPI_top_0_4.vhd" \
 
 vlog -work axi_protocol_converter_v2_1_29  -incr -mfcu  "+incdir+../../../../PYNQ-Z1_QSPI.gen/sources_1/bd/design_1/ipshared/ec67/hdl" "+incdir+../../../../PYNQ-Z1_QSPI.gen/sources_1/bd/design_1/ipshared/6b2b/hdl" "+incdir+../../../../PYNQ-Z1_QSPI.gen/sources_1/bd/design_1/ipshared/c2c6" "+incdir+D:/Xilinx/Vivado/2023.2/data/xilinx_vip/include" \
 "../../../../PYNQ-Z1_QSPI.gen/sources_1/bd/design_1/ipshared/a63f/hdl/axi_protocol_converter_v2_1_vl_rfs.v" \
