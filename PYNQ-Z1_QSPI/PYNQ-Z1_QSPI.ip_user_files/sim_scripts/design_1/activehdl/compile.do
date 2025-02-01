@@ -165,7 +165,7 @@ vcom -work axi_gpio_v2_0_31 -93  \
 vcom -work xil_defaultlib -93  \
 "../../../bd/design_1/ip/design_1_axi_gpio_0_0/sim/design_1_axi_gpio_0_0.vhd" \
 "../../../bd/design_1/ip/design_1_axi_gpio_1_0/sim/design_1_axi_gpio_1_0.vhd" \
-"../../../bd/design_1/ipshared/d43a/QSPI_top.vhd" \
+"../../../bd/design_1/ipshared/8b22/QSPI_top.vhd" \
 "../../../bd/design_1/ip/design_1_QSPI_top_0_4/sim/design_1_QSPI_top_0_4.vhd" \
 
 vlog -work axi_protocol_converter_v2_1_29  -v2k5 "+incdir+../../../../PYNQ-Z1_QSPI.gen/sources_1/bd/design_1/ipshared/ec67/hdl" "+incdir+../../../../PYNQ-Z1_QSPI.gen/sources_1/bd/design_1/ipshared/6b2b/hdl" "+incdir+../../../../PYNQ-Z1_QSPI.gen/sources_1/bd/design_1/ipshared/c2c6" "+incdir+D:/Xilinx/Vivado/2023.2/data/xilinx_vip/include" -l xilinx_vip -l xpm -l axi_infrastructure_v1_1_0 -l axi_vip_v1_1_15 -l processing_system7_vip_v1_0_17 -l xil_defaultlib -l dist_mem_gen_v8_0_14 -l lib_pkg_v1_0_3 -l lib_cdc_v1_0_2 -l lib_srl_fifo_v1_0_3 -l fifo_generator_v13_2_9 -l lib_fifo_v1_0_18 -l axi_lite_ipif_v3_0_4 -l interrupt_control_v3_1_5 -l axi_quad_spi_v3_2_28 -l generic_baseblocks_v2_1_1 -l axi_register_slice_v2_1_29 -l axi_data_fifo_v2_1_28 -l axi_crossbar_v2_1_30 -l proc_sys_reset_v5_0_14 -l axi_gpio_v2_0_31 -l axi_protocol_converter_v2_1_29 \

@@ -109,20 +109,23 @@ set_property -dict {PACKAGE_PIN T14 IOSTANDARD LVCMOS33} [get_ports {spi_ss_io[1
 
 ##QSPI interface:
 ##QCLK
-set_property -dict {PACKAGE_PIN U17 IOSTANDARD LVCMOS33} [get_ports {QCLK_0}]
+set_property -dict {PACKAGE_PIN V15 IOSTANDARD LVCMOS33} [get_ports {QCLK_0}]
 ##QCLKfb - it must be a SRCC or MRCC pin!
 ##set_property -dict {PACKAGE_PIN U7 IOSTANDARD LVCMOS33} [get_ports {QCLKfb_0}]
 ##create_clock -period 8.0 -waveform {0.0 4.0} [get_ports QCLKfb_0]
 ##QD3..0
-set_property -dict {PACKAGE_PIN V7 IOSTANDARD LVCMOS33} [get_ports {QD_0[0]}]
-set_property -dict {PACKAGE_PIN U8 IOSTANDARD LVCMOS33} [get_ports {QD_0[1]}]
-set_property -dict {PACKAGE_PIN V8 IOSTANDARD LVCMOS33} [get_ports {QD_0[2]}]
-set_property -dict {PACKAGE_PIN V10 IOSTANDARD LVCMOS33} [get_ports {QD_0[3]}]
+set_property -dict {PACKAGE_PIN V8  IOSTANDARD LVCMOS33} [get_ports {QD_0[0]}]
+set_property -dict {PACKAGE_PIN R16 IOSTANDARD LVCMOS33} [get_ports {QD_0[1]}]
+set_property -dict {PACKAGE_PIN T15 IOSTANDARD LVCMOS33} [get_ports {QD_0[2]}]
+set_property -dict {PACKAGE_PIN U8  IOSTANDARD LVCMOS33} [get_ports {QD_0[3]}]
 ##CS3..0
-set_property -dict {PACKAGE_PIN U5  IOSTANDARD LVCMOS33} [get_ports {CS_0[0]}]
-set_property -dict {PACKAGE_PIN V5  IOSTANDARD LVCMOS33} [get_ports {CS_0[1]}]
-set_property -dict {PACKAGE_PIN V6  IOSTANDARD LVCMOS33} [get_ports {CS_0[2]}]
-set_property -dict {PACKAGE_PIN V13 IOSTANDARD LVCMOS33} [get_ports {CS_0[3]}]
+set_property -dict {PACKAGE_PIN V13 IOSTANDARD LVCMOS33} [get_ports {CS_0[0]}]
+set_property -dict {PACKAGE_PIN U13 IOSTANDARD LVCMOS33} [get_ports {CS_0[1]}]
+set_property -dict {PACKAGE_PIN U12 IOSTANDARD LVCMOS33} [get_ports {CS_0[2]}]
+set_property -dict {PACKAGE_PIN U7  IOSTANDARD LVCMOS33} [get_ports {CS_0[3]}]
+
+set_property -dict {PACKAGE_PIN V10 IOSTANDARD LVCMOS33} [get_ports {DIR[0]}]
+set_property -dict {PACKAGE_PIN U17 IOSTANDARD LVCMOS33} [get_ports {DIR[1]}]
 
 #set_input_delay -max $in_max_dly [get_ports QD_0[*]]
 #set_input_delay -min $in_min_dly [get_ports QD_0[*]]

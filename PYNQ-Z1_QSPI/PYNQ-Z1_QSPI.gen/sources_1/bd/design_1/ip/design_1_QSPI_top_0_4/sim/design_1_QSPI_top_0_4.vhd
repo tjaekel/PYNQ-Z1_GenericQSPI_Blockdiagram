@@ -1,5 +1,5 @@
 -- (c) Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
--- (c) Copyright 2022-2024 Advanced Micro Devices, Inc. All rights reserved.
+-- (c) Copyright 2022-2025 Advanced Micro Devices, Inc. All rights reserved.
 -- 
 -- This file contains confidential and proprietary information
 -- of AMD and is protected under U.S. and international copyright
@@ -46,8 +46,8 @@
 -- 
 -- DO NOT MODIFY THIS FILE.
 
--- IP VLNV: xilinx.com:user:QSPI_top:1.3
--- IP Revision: 1
+-- IP VLNV: xilinx.com:user:QSPI_top:1.4
+-- IP Revision: 2
 
 LIBRARY ieee;
 USE ieee.std_logic_1164.ALL;
@@ -62,7 +62,8 @@ ENTITY design_1_QSPI_top_0_4 IS
     S_CLK : IN STD_LOGIC;
     QCLK : OUT STD_LOGIC;
     QD : INOUT STD_LOGIC_VECTOR(3 DOWNTO 0);
-    CS : OUT STD_LOGIC_VECTOR(3 DOWNTO 0)
+    CS : OUT STD_LOGIC_VECTOR(3 DOWNTO 0);
+    DIR : OUT STD_LOGIC_VECTOR(1 DOWNTO 0)
   );
 END design_1_QSPI_top_0_4;
 
@@ -78,9 +79,14 @@ ARCHITECTURE design_1_QSPI_top_0_4_arch OF design_1_QSPI_top_0_4 IS
       S_CLK : IN STD_LOGIC;
       QCLK : OUT STD_LOGIC;
       QD : INOUT STD_LOGIC_VECTOR(3 DOWNTO 0);
-      CS : OUT STD_LOGIC_VECTOR(3 DOWNTO 0)
+      CS : OUT STD_LOGIC_VECTOR(3 DOWNTO 0);
+      DIR : OUT STD_LOGIC_VECTOR(1 DOWNTO 0)
     );
   END COMPONENT QSPI_top;
+  ATTRIBUTE X_INTERFACE_INFO : STRING;
+  ATTRIBUTE X_INTERFACE_PARAMETER : STRING;
+  ATTRIBUTE X_INTERFACE_PARAMETER OF S_CLK: SIGNAL IS "XIL_INTERFACENAME S_CLK, FREQ_HZ 100000000, FREQ_TOLERANCE_HZ 0, PHASE 0.0, CLK_DOMAIN design_1_processing_system7_0_0_FCLK_CLK0, INSERT_VIP 0";
+  ATTRIBUTE X_INTERFACE_INFO OF S_CLK: SIGNAL IS "xilinx.com:signal:clock:1.0 S_CLK CLK";
 BEGIN
   U0 : QSPI_top
     PORT MAP (
@@ -91,6 +97,7 @@ BEGIN
       S_CLK => S_CLK,
       QCLK => QCLK,
       QD => QD,
-      CS => CS
+      CS => CS,
+      DIR => DIR
     );
 END design_1_QSPI_top_0_4_arch;

@@ -2,7 +2,7 @@
 --Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------
 --Tool Version: Vivado v.2023.2 (win64) Build 4029153 Fri Oct 13 20:14:34 MDT 2023
---Date        : Sat Dec 14 19:02:55 2024
+--Date        : Fri Jan 31 15:08:37 2025
 --Host        : LAPTOP-TJAEKEL2 running 64-bit major release  (build 9200)
 --Command     : generate_target design_1.bd
 --Design      : design_1
@@ -1551,6 +1551,7 @@ entity design_1 is
     DDR_ras_n : inout STD_LOGIC;
     DDR_reset_n : inout STD_LOGIC;
     DDR_we_n : inout STD_LOGIC;
+    DIR : out STD_LOGIC_VECTOR ( 1 downto 0 );
     FIXED_IO_ddr_vrn : inout STD_LOGIC;
     FIXED_IO_ddr_vrp : inout STD_LOGIC;
     FIXED_IO_mio : inout STD_LOGIC_VECTOR ( 53 downto 0 );
@@ -1784,11 +1785,13 @@ architecture STRUCTURE of design_1 is
     S_CLK : in STD_LOGIC;
     QCLK : out STD_LOGIC;
     QD : inout STD_LOGIC_VECTOR ( 3 downto 0 );
-    CS : out STD_LOGIC_VECTOR ( 3 downto 0 )
+    CS : out STD_LOGIC_VECTOR ( 3 downto 0 );
+    DIR : out STD_LOGIC_VECTOR ( 1 downto 0 )
   );
   end component design_1_QSPI_top_0_4;
   signal Net : STD_LOGIC_VECTOR ( 3 downto 0 );
   signal QSPI_top_0_CS : STD_LOGIC_VECTOR ( 3 downto 0 );
+  signal QSPI_top_0_DIR : STD_LOGIC_VECTOR ( 1 downto 0 );
   signal QSPI_top_0_QCLK : STD_LOGIC;
   signal QSPI_top_0_RD_REG : STD_LOGIC_VECTOR ( 31 downto 0 );
   signal QSPI_top_0_STS_REG : STD_LOGIC_VECTOR ( 31 downto 0 );
@@ -1984,6 +1987,7 @@ architecture STRUCTURE of design_1 is
   attribute X_INTERFACE_INFO of spi_ss_o : signal is "xilinx.com:interface:spi:1.0 spi SS_O";
 begin
   CS_0(3 downto 0) <= QSPI_top_0_CS(3 downto 0);
+  DIR(1 downto 0) <= QSPI_top_0_DIR(1 downto 0);
   QCLK_0 <= QSPI_top_0_QCLK;
   axi_quad_spi_0_SPI_0_IO0_I <= spi_io0_i;
   axi_quad_spi_0_SPI_0_IO1_I <= spi_io1_i;
@@ -2001,6 +2005,7 @@ QSPI_top_0: component design_1_QSPI_top_0_4
      port map (
       CS(3 downto 0) => QSPI_top_0_CS(3 downto 0),
       CTL_REG(31 downto 0) => axi_gpio_1_gpio_io_o(31 downto 0),
+      DIR(1 downto 0) => QSPI_top_0_DIR(1 downto 0),
       QCLK => QSPI_top_0_QCLK,
       QD(3 downto 0) => QD_0(3 downto 0),
       RD_REG(31 downto 0) => QSPI_top_0_RD_REG(31 downto 0),

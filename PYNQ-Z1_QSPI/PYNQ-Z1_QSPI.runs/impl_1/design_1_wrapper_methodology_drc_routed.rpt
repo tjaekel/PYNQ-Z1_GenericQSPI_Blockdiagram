@@ -1,7 +1,7 @@
 Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2023.2 (win64) Build 4029153 Fri Oct 13 20:14:34 MDT 2023
-| Date         : Sat Dec 14 19:08:13 2024
+| Date         : Fri Jan 31 15:13:06 2025
 | Host         : LAPTOP-TJAEKEL2 running 64-bit major release  (build 9200)
 | Command      : report_methodology -file design_1_wrapper_methodology_drc_routed.rpt -pb design_1_wrapper_methodology_drc_routed.pb -rpx design_1_wrapper_methodology_drc_routed.rpx
 | Design       : design_1_wrapper
@@ -23,11 +23,11 @@ Table of Contents
           Floorplan: design_1
       Design limits: <entire design considered>
              Max violations: <unlimited>
-             Violations found: 20
+             Violations found: 22
 +-----------+----------+-------------------------------+------------+
 | Rule      | Severity | Description                   | Violations |
 +-----------+----------+-------------------------------+------------+
-| TIMING-18 | Warning  | Missing input or output delay | 20         |
+| TIMING-18 | Warning  | Missing input or output delay | 22         |
 +-----------+----------+-------------------------------+------------+
 
 2. REPORT DETAILS
@@ -84,50 +84,60 @@ Related violations: <none>
 
 TIMING-18#11 Warning
 Missing input or output delay  
-An output delay is missing on QCLK_0 relative to the rising and/or falling clock edge(s) of clk_fpga_0.
+An output delay is missing on DIR[0] relative to the rising and/or falling clock edge(s) of clk_fpga_0.
 Related violations: <none>
 
 TIMING-18#12 Warning
 Missing input or output delay  
-An output delay is missing on QD_0[0] relative to the rising and/or falling clock edge(s) of clk_fpga_0.
+An output delay is missing on DIR[1] relative to the rising and/or falling clock edge(s) of clk_fpga_0.
 Related violations: <none>
 
 TIMING-18#13 Warning
 Missing input or output delay  
-An output delay is missing on QD_0[1] relative to the rising and/or falling clock edge(s) of clk_fpga_0.
+An output delay is missing on QCLK_0 relative to the rising and/or falling clock edge(s) of clk_fpga_0.
 Related violations: <none>
 
 TIMING-18#14 Warning
 Missing input or output delay  
-An output delay is missing on QD_0[2] relative to the rising and/or falling clock edge(s) of clk_fpga_0.
+An output delay is missing on QD_0[0] relative to the rising and/or falling clock edge(s) of clk_fpga_0.
 Related violations: <none>
 
 TIMING-18#15 Warning
 Missing input or output delay  
-An output delay is missing on QD_0[3] relative to the rising and/or falling clock edge(s) of clk_fpga_0.
+An output delay is missing on QD_0[1] relative to the rising and/or falling clock edge(s) of clk_fpga_0.
 Related violations: <none>
 
 TIMING-18#16 Warning
 Missing input or output delay  
-An output delay is missing on spi_io0_io relative to the rising and/or falling clock edge(s) of clk_fpga_0.
+An output delay is missing on QD_0[2] relative to the rising and/or falling clock edge(s) of clk_fpga_0.
 Related violations: <none>
 
 TIMING-18#17 Warning
 Missing input or output delay  
-An output delay is missing on spi_io1_io relative to the rising and/or falling clock edge(s) of clk_fpga_0.
+An output delay is missing on QD_0[3] relative to the rising and/or falling clock edge(s) of clk_fpga_0.
 Related violations: <none>
 
 TIMING-18#18 Warning
 Missing input or output delay  
-An output delay is missing on spi_sck_io relative to the rising and/or falling clock edge(s) of clk_fpga_0.
+An output delay is missing on spi_io0_io relative to the rising and/or falling clock edge(s) of clk_fpga_0.
 Related violations: <none>
 
 TIMING-18#19 Warning
 Missing input or output delay  
-An output delay is missing on spi_ss_io[0] relative to the rising and/or falling clock edge(s) of clk_fpga_0.
+An output delay is missing on spi_io1_io relative to the rising and/or falling clock edge(s) of clk_fpga_0.
 Related violations: <none>
 
 TIMING-18#20 Warning
+Missing input or output delay  
+An output delay is missing on spi_sck_io relative to the rising and/or falling clock edge(s) of clk_fpga_0.
+Related violations: <none>
+
+TIMING-18#21 Warning
+Missing input or output delay  
+An output delay is missing on spi_ss_io[0] relative to the rising and/or falling clock edge(s) of clk_fpga_0.
+Related violations: <none>
+
+TIMING-18#22 Warning
 Missing input or output delay  
 An output delay is missing on spi_ss_io[1] relative to the rising and/or falling clock edge(s) of clk_fpga_0.
 Related violations: <none>

@@ -2,7 +2,7 @@
 --Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------
 --Tool Version: Vivado v.2023.2 (win64) Build 4029153 Fri Oct 13 20:14:34 MDT 2023
---Date        : Sat Dec 14 19:02:55 2024
+--Date        : Fri Jan 31 15:08:37 2025
 --Host        : LAPTOP-TJAEKEL2 running 64-bit major release  (build 9200)
 --Command     : generate_target design_1_wrapper.bd
 --Design      : design_1_wrapper
@@ -30,6 +30,7 @@ entity design_1_wrapper is
     DDR_ras_n : inout STD_LOGIC;
     DDR_reset_n : inout STD_LOGIC;
     DDR_we_n : inout STD_LOGIC;
+    DIR : out STD_LOGIC_VECTOR ( 1 downto 0 );
     FIXED_IO_ddr_vrn : inout STD_LOGIC;
     FIXED_IO_ddr_vrp : inout STD_LOGIC;
     FIXED_IO_mio : inout STD_LOGIC_VECTOR ( 53 downto 0 );
@@ -83,7 +84,8 @@ architecture STRUCTURE of design_1_wrapper is
     spi_ss_t : out STD_LOGIC;
     QCLK_0 : out STD_LOGIC;
     QD_0 : inout STD_LOGIC_VECTOR ( 3 downto 0 );
-    CS_0 : out STD_LOGIC_VECTOR ( 3 downto 0 )
+    CS_0 : out STD_LOGIC_VECTOR ( 3 downto 0 );
+    DIR : out STD_LOGIC_VECTOR ( 1 downto 0 )
   );
   end component design_1;
   component IOBUF is
@@ -129,6 +131,7 @@ design_1_i: component design_1
       DDR_ras_n => DDR_ras_n,
       DDR_reset_n => DDR_reset_n,
       DDR_we_n => DDR_we_n,
+      DIR(1 downto 0) => DIR(1 downto 0),
       FIXED_IO_ddr_vrn => FIXED_IO_ddr_vrn,
       FIXED_IO_ddr_vrp => FIXED_IO_ddr_vrp,
       FIXED_IO_mio(53 downto 0) => FIXED_IO_mio(53 downto 0),

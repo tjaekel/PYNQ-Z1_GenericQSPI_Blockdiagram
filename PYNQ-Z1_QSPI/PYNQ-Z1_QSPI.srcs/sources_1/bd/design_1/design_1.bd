@@ -1,7 +1,7 @@
 {
   "design": {
     "design_info": {
-      "boundary_crc": "0x9C2F46D18AD8EA0",
+      "boundary_crc": "0x43394BAB6397A29C",
       "device": "xc7z020clg400-1",
       "gen_directory": "../../../../PYNQ-Z1_QSPI.gen/sources_1/bd/design_1",
       "name": "design_1",
@@ -270,6 +270,11 @@
       "CS_0": {
         "direction": "O",
         "left": "3",
+        "right": "0"
+      },
+      "DIR": {
+        "direction": "O",
+        "left": "1",
         "right": "0"
       }
     },
@@ -730,6 +735,9 @@
           },
           "PCW_INCLUDE_ACP_TRANS_CHECK": {
             "value": "0"
+          },
+          "PCW_IRQ_F2P_MODE": {
+            "value": "DIRECT"
           },
           "PCW_MIO_0_IOTYPE": {
             "value": "LVCMOS 3.3V"
@@ -1365,7 +1373,7 @@
             "value": "200"
           },
           "PCW_PERIPHERAL_BOARD_PRESET": {
-            "value": "None"
+            "value": "part0"
           },
           "PCW_PLL_BYPASSMODE_ENABLE": {
             "value": "0"
@@ -1489,6 +1497,18 @@
           },
           "PCW_SPI_PERIPHERAL_VALID": {
             "value": "0"
+          },
+          "PCW_S_AXI_HP0_DATA_WIDTH": {
+            "value": "64"
+          },
+          "PCW_S_AXI_HP1_DATA_WIDTH": {
+            "value": "64"
+          },
+          "PCW_S_AXI_HP2_DATA_WIDTH": {
+            "value": "64"
+          },
+          "PCW_S_AXI_HP3_DATA_WIDTH": {
+            "value": "64"
           },
           "PCW_TPIU_PERIPHERAL_CLKSRC": {
             "value": "External"
@@ -2808,8 +2828,8 @@
         }
       },
       "QSPI_top_0": {
-        "vlnv": "xilinx.com:user:QSPI_top:1.3",
-        "ip_revision": "1",
+        "vlnv": "xilinx.com:user:QSPI_top:1.4",
+        "ip_revision": "2",
         "xci_name": "design_1_QSPI_top_0_4",
         "xci_path": "ip\\design_1_QSPI_top_0_4\\design_1_QSPI_top_0_4.xci",
         "inst_hier_path": "QSPI_top_0"
@@ -2876,6 +2896,12 @@
         "ports": [
           "QSPI_top_0/CS",
           "CS_0"
+        ]
+      },
+      "QSPI_top_0_DIR": {
+        "ports": [
+          "QSPI_top_0/DIR",
+          "DIR"
         ]
       },
       "QSPI_top_0_QCLK": {

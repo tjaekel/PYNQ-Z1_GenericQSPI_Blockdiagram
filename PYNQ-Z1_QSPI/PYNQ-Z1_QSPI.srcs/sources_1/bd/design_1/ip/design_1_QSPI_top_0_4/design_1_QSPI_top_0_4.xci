@@ -3,8 +3,8 @@
   "ip_inst": {
     "xci_name": "design_1_QSPI_top_0_4",
     "cell_name": "QSPI_top_0",
-    "component_reference": "xilinx.com:user:QSPI_top:1.3",
-    "ip_revision": "1",
+    "component_reference": "xilinx.com:user:QSPI_top:1.4",
+    "ip_revision": "2",
     "gen_directory": "../../../../../../PYNQ-Z1_QSPI.gen/sources_1/bd/design_1/ip/design_1_QSPI_top_0_4",
     "parameters": {
       "component_parameters": {
@@ -25,7 +25,7 @@
       },
       "runtime_parameters": {
         "IPCONTEXT": [ { "value": "IP_Integrator" } ],
-        "IPREVISION": [ { "value": "1" } ],
+        "IPREVISION": [ { "value": "2" } ],
         "MANAGED": [ { "value": "TRUE" } ],
         "OUTPUTDIR": [ { "value": "../../../../../../PYNQ-Z1_QSPI.gen/sources_1/bd/design_1/ip/design_1_QSPI_top_0_4" } ],
         "SELECTEDSIMMODEL": [ { "value": "" } ],
@@ -43,7 +43,28 @@
         "S_CLK": [ { "direction": "in" } ],
         "QCLK": [ { "direction": "out" } ],
         "QD": [ { "direction": "inout", "size_left": "3", "size_right": "0" } ],
-        "CS": [ { "direction": "out", "size_left": "3", "size_right": "0" } ]
+        "CS": [ { "direction": "out", "size_left": "3", "size_right": "0" } ],
+        "DIR": [ { "direction": "out", "size_left": "1", "size_right": "0", "driver_value": "11" } ]
+      },
+      "interfaces": {
+        "S_CLK": {
+          "vlnv": "xilinx.com:signal:clock:1.0",
+          "abstraction_type": "xilinx.com:signal:clock_rtl:1.0",
+          "mode": "slave",
+          "parameters": {
+            "FREQ_HZ": [ { "value": "100000000", "value_src": "user_prop", "value_permission": "bd_and_user", "resolve_type": "generated", "format": "long", "is_ips_inferred": true, "is_static_object": false } ],
+            "FREQ_TOLERANCE_HZ": [ { "value": "0", "value_permission": "bd_and_user", "resolve_type": "generated", "format": "long", "is_ips_inferred": true, "is_static_object": false } ],
+            "PHASE": [ { "value": "0.0", "value_permission": "bd_and_user", "resolve_type": "generated", "format": "float", "is_ips_inferred": true, "is_static_object": false } ],
+            "CLK_DOMAIN": [ { "value": "design_1_processing_system7_0_0_FCLK_CLK0", "value_src": "default_prop", "value_permission": "bd_and_user", "resolve_type": "generated", "is_ips_inferred": true, "is_static_object": false } ],
+            "ASSOCIATED_BUSIF": [ { "value": "", "value_permission": "bd_and_user", "resolve_type": "generated", "is_ips_inferred": true, "is_static_object": false } ],
+            "ASSOCIATED_PORT": [ { "value": "", "value_permission": "bd_and_user", "resolve_type": "generated", "is_ips_inferred": true, "is_static_object": false } ],
+            "ASSOCIATED_RESET": [ { "value": "", "value_permission": "bd_and_user", "resolve_type": "generated", "is_ips_inferred": true, "is_static_object": false } ],
+            "INSERT_VIP": [ { "value": "0", "resolve_type": "user", "format": "long", "usage": "simulation.rtl", "is_ips_inferred": true, "is_static_object": false } ]
+          },
+          "port_maps": {
+            "CLK": [ { "physical_name": "S_CLK" } ]
+          }
+        }
       }
     }
   }
