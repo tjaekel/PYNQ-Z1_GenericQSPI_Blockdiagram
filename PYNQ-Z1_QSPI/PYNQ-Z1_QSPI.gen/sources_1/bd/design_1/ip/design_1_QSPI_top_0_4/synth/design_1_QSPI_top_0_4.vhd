@@ -46,7 +46,7 @@
 -- 
 -- DO NOT MODIFY THIS FILE.
 
--- IP VLNV: xilinx.com:user:QSPI_top:1.4
+-- IP VLNV: xilinx.com:user:QSPI_top:1.5
 -- IP Revision: 2
 
 LIBRARY ieee;
@@ -63,7 +63,9 @@ ENTITY design_1_QSPI_top_0_4 IS
     QCLK : OUT STD_LOGIC;
     QD : INOUT STD_LOGIC_VECTOR(3 DOWNTO 0);
     CS : OUT STD_LOGIC_VECTOR(3 DOWNTO 0);
-    DIR : OUT STD_LOGIC_VECTOR(1 DOWNTO 0)
+    DIR : OUT STD_LOGIC_VECTOR(1 DOWNTO 0);
+    INTn : IN STD_LOGIC_VECTOR(5 DOWNTO 0);
+    GPIO : OUT STD_LOGIC_VECTOR(6 DOWNTO 0)
   );
 END design_1_QSPI_top_0_4;
 
@@ -80,7 +82,9 @@ ARCHITECTURE design_1_QSPI_top_0_4_arch OF design_1_QSPI_top_0_4 IS
       QCLK : OUT STD_LOGIC;
       QD : INOUT STD_LOGIC_VECTOR(3 DOWNTO 0);
       CS : OUT STD_LOGIC_VECTOR(3 DOWNTO 0);
-      DIR : OUT STD_LOGIC_VECTOR(1 DOWNTO 0)
+      DIR : OUT STD_LOGIC_VECTOR(1 DOWNTO 0);
+      INTn : IN STD_LOGIC_VECTOR(5 DOWNTO 0);
+      GPIO : OUT STD_LOGIC_VECTOR(6 DOWNTO 0)
     );
   END COMPONENT QSPI_top;
   ATTRIBUTE X_CORE_INFO : STRING;
@@ -88,7 +92,7 @@ ARCHITECTURE design_1_QSPI_top_0_4_arch OF design_1_QSPI_top_0_4 IS
   ATTRIBUTE CHECK_LICENSE_TYPE : STRING;
   ATTRIBUTE CHECK_LICENSE_TYPE OF design_1_QSPI_top_0_4_arch : ARCHITECTURE IS "design_1_QSPI_top_0_4,QSPI_top,{}";
   ATTRIBUTE CORE_GENERATION_INFO : STRING;
-  ATTRIBUTE CORE_GENERATION_INFO OF design_1_QSPI_top_0_4_arch: ARCHITECTURE IS "design_1_QSPI_top_0_4,QSPI_top,{x_ipProduct=Vivado 2023.2,x_ipVendor=xilinx.com,x_ipLibrary=user,x_ipName=QSPI_top,x_ipVersion=1.4,x_ipCoreRevision=2,x_ipLanguage=VHDL,x_ipSimLanguage=MIXED}";
+  ATTRIBUTE CORE_GENERATION_INFO OF design_1_QSPI_top_0_4_arch: ARCHITECTURE IS "design_1_QSPI_top_0_4,QSPI_top,{x_ipProduct=Vivado 2023.2,x_ipVendor=xilinx.com,x_ipLibrary=user,x_ipName=QSPI_top,x_ipVersion=1.5,x_ipCoreRevision=2,x_ipLanguage=VHDL,x_ipSimLanguage=MIXED}";
   ATTRIBUTE IP_DEFINITION_SOURCE : STRING;
   ATTRIBUTE IP_DEFINITION_SOURCE OF design_1_QSPI_top_0_4_arch: ARCHITECTURE IS "package_project";
   ATTRIBUTE X_INTERFACE_INFO : STRING;
@@ -106,6 +110,8 @@ BEGIN
       QCLK => QCLK,
       QD => QD,
       CS => CS,
-      DIR => DIR
+      DIR => DIR,
+      INTn => INTn,
+      GPIO => GPIO
     );
 END design_1_QSPI_top_0_4_arch;

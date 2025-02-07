@@ -2,8 +2,8 @@
 --Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------
 --Tool Version: Vivado v.2023.2 (win64) Build 4029153 Fri Oct 13 20:14:34 MDT 2023
---Date        : Fri Jan 31 15:08:37 2025
---Host        : LAPTOP-TJAEKEL2 running 64-bit major release  (build 9200)
+--Date        : Tue Feb  4 13:50:46 2025
+--Host        : 2XZQ4M3 running 64-bit major release  (build 9200)
 --Command     : generate_target design_1_wrapper.bd
 --Design      : design_1_wrapper
 --Purpose     : IP block netlist
@@ -31,18 +31,28 @@ entity design_1_wrapper is
     DDR_reset_n : inout STD_LOGIC;
     DDR_we_n : inout STD_LOGIC;
     DIR : out STD_LOGIC_VECTOR ( 1 downto 0 );
+    DIR1 : out STD_LOGIC_VECTOR ( 0 to 0 );
+    DIR2a : out STD_LOGIC_VECTOR ( 0 to 0 );
+    DIR2b : out STD_LOGIC_VECTOR ( 0 to 0 );
+    DIR2c : out STD_LOGIC_VECTOR ( 0 to 0 );
+    DIR2d : out STD_LOGIC_VECTOR ( 0 to 0 );
+    DIR3 : out STD_LOGIC_VECTOR ( 0 to 0 );
     FIXED_IO_ddr_vrn : inout STD_LOGIC;
     FIXED_IO_ddr_vrp : inout STD_LOGIC;
     FIXED_IO_mio : inout STD_LOGIC_VECTOR ( 53 downto 0 );
     FIXED_IO_ps_clk : inout STD_LOGIC;
     FIXED_IO_ps_porb : inout STD_LOGIC;
     FIXED_IO_ps_srstb : inout STD_LOGIC;
+    GPIO : out STD_LOGIC_VECTOR ( 6 downto 0 );
+    INTn : in STD_LOGIC_VECTOR ( 5 downto 0 );
     QCLK_0 : out STD_LOGIC;
     QD_0 : inout STD_LOGIC_VECTOR ( 3 downto 0 );
+    i2c_scl_io : inout STD_LOGIC;
+    i2c_sda_io : inout STD_LOGIC;
     spi_io0_io : inout STD_LOGIC;
     spi_io1_io : inout STD_LOGIC;
     spi_sck_io : inout STD_LOGIC;
-    spi_ss_io : inout STD_LOGIC_VECTOR ( 1 downto 0 )
+    spi_ss_io : inout STD_LOGIC_VECTOR ( 0 to 0 )
   );
 end design_1_wrapper;
 
@@ -79,13 +89,27 @@ architecture STRUCTURE of design_1_wrapper is
     spi_sck_i : in STD_LOGIC;
     spi_sck_o : out STD_LOGIC;
     spi_sck_t : out STD_LOGIC;
-    spi_ss_i : in STD_LOGIC_VECTOR ( 1 downto 0 );
-    spi_ss_o : out STD_LOGIC_VECTOR ( 1 downto 0 );
+    spi_ss_i : in STD_LOGIC_VECTOR ( 0 to 0 );
+    spi_ss_o : out STD_LOGIC_VECTOR ( 0 to 0 );
     spi_ss_t : out STD_LOGIC;
     QCLK_0 : out STD_LOGIC;
     QD_0 : inout STD_LOGIC_VECTOR ( 3 downto 0 );
     CS_0 : out STD_LOGIC_VECTOR ( 3 downto 0 );
-    DIR : out STD_LOGIC_VECTOR ( 1 downto 0 )
+    DIR : out STD_LOGIC_VECTOR ( 1 downto 0 );
+    GPIO : out STD_LOGIC_VECTOR ( 6 downto 0 );
+    INTn : in STD_LOGIC_VECTOR ( 5 downto 0 );
+    DIR1 : out STD_LOGIC_VECTOR ( 0 to 0 );
+    DIR3 : out STD_LOGIC_VECTOR ( 0 to 0 );
+    DIR2a : out STD_LOGIC_VECTOR ( 0 to 0 );
+    DIR2b : out STD_LOGIC_VECTOR ( 0 to 0 );
+    DIR2c : out STD_LOGIC_VECTOR ( 0 to 0 );
+    DIR2d : out STD_LOGIC_VECTOR ( 0 to 0 );
+    i2c_scl_i : in STD_LOGIC;
+    i2c_scl_o : out STD_LOGIC;
+    i2c_scl_t : out STD_LOGIC;
+    i2c_sda_i : in STD_LOGIC;
+    i2c_sda_o : out STD_LOGIC;
+    i2c_sda_t : out STD_LOGIC
   );
   end component design_1;
   component IOBUF is
@@ -96,6 +120,12 @@ architecture STRUCTURE of design_1_wrapper is
     IO : inout STD_LOGIC
   );
   end component IOBUF;
+  signal i2c_scl_i : STD_LOGIC;
+  signal i2c_scl_o : STD_LOGIC;
+  signal i2c_scl_t : STD_LOGIC;
+  signal i2c_sda_i : STD_LOGIC;
+  signal i2c_sda_o : STD_LOGIC;
+  signal i2c_sda_t : STD_LOGIC;
   signal spi_io0_i : STD_LOGIC;
   signal spi_io0_o : STD_LOGIC;
   signal spi_io0_t : STD_LOGIC;
@@ -106,11 +136,8 @@ architecture STRUCTURE of design_1_wrapper is
   signal spi_sck_o : STD_LOGIC;
   signal spi_sck_t : STD_LOGIC;
   signal spi_ss_i_0 : STD_LOGIC_VECTOR ( 0 to 0 );
-  signal spi_ss_i_1 : STD_LOGIC_VECTOR ( 1 to 1 );
   signal spi_ss_io_0 : STD_LOGIC_VECTOR ( 0 to 0 );
-  signal spi_ss_io_1 : STD_LOGIC_VECTOR ( 1 to 1 );
   signal spi_ss_o_0 : STD_LOGIC_VECTOR ( 0 to 0 );
-  signal spi_ss_o_1 : STD_LOGIC_VECTOR ( 1 to 1 );
   signal spi_ss_t : STD_LOGIC;
 begin
 design_1_i: component design_1
@@ -132,14 +159,28 @@ design_1_i: component design_1
       DDR_reset_n => DDR_reset_n,
       DDR_we_n => DDR_we_n,
       DIR(1 downto 0) => DIR(1 downto 0),
+      DIR1(0) => DIR1(0),
+      DIR2a(0) => DIR2a(0),
+      DIR2b(0) => DIR2b(0),
+      DIR2c(0) => DIR2c(0),
+      DIR2d(0) => DIR2d(0),
+      DIR3(0) => DIR3(0),
       FIXED_IO_ddr_vrn => FIXED_IO_ddr_vrn,
       FIXED_IO_ddr_vrp => FIXED_IO_ddr_vrp,
       FIXED_IO_mio(53 downto 0) => FIXED_IO_mio(53 downto 0),
       FIXED_IO_ps_clk => FIXED_IO_ps_clk,
       FIXED_IO_ps_porb => FIXED_IO_ps_porb,
       FIXED_IO_ps_srstb => FIXED_IO_ps_srstb,
+      GPIO(6 downto 0) => GPIO(6 downto 0),
+      INTn(5 downto 0) => INTn(5 downto 0),
       QCLK_0 => QCLK_0,
       QD_0(3 downto 0) => QD_0(3 downto 0),
+      i2c_scl_i => i2c_scl_i,
+      i2c_scl_o => i2c_scl_o,
+      i2c_scl_t => i2c_scl_t,
+      i2c_sda_i => i2c_sda_i,
+      i2c_sda_o => i2c_sda_o,
+      i2c_sda_t => i2c_sda_t,
       spi_io0_i => spi_io0_i,
       spi_io0_o => spi_io0_o,
       spi_io0_t => spi_io0_t,
@@ -149,11 +190,23 @@ design_1_i: component design_1
       spi_sck_i => spi_sck_i,
       spi_sck_o => spi_sck_o,
       spi_sck_t => spi_sck_t,
-      spi_ss_i(1) => spi_ss_i_1(1),
       spi_ss_i(0) => spi_ss_i_0(0),
-      spi_ss_o(1) => spi_ss_o_1(1),
       spi_ss_o(0) => spi_ss_o_0(0),
       spi_ss_t => spi_ss_t
+    );
+i2c_scl_iobuf: component IOBUF
+     port map (
+      I => i2c_scl_o,
+      IO => i2c_scl_io,
+      O => i2c_scl_i,
+      T => i2c_scl_t
+    );
+i2c_sda_iobuf: component IOBUF
+     port map (
+      I => i2c_sda_o,
+      IO => i2c_sda_io,
+      O => i2c_sda_i,
+      T => i2c_sda_t
     );
 spi_io0_iobuf: component IOBUF
      port map (
@@ -181,13 +234,6 @@ spi_ss_iobuf_0: component IOBUF
       I => spi_ss_o_0(0),
       IO => spi_ss_io(0),
       O => spi_ss_i_0(0),
-      T => spi_ss_t
-    );
-spi_ss_iobuf_1: component IOBUF
-     port map (
-      I => spi_ss_o_1(1),
-      IO => spi_ss_io(1),
-      O => spi_ss_i_1(1),
       T => spi_ss_t
     );
 end STRUCTURE;

@@ -1,8 +1,8 @@
 Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
 ---------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2023.2 (win64) Build 4029153 Fri Oct 13 20:14:34 MDT 2023
-| Date         : Fri Jan 31 15:08:20 2025
-| Host         : LAPTOP-TJAEKEL2 running 64-bit major release  (build 9200)
+| Date         : Tue Feb  4 13:17:45 2025
+| Host         : 2XZQ4M3 running 64-bit major release  (build 9200)
 | Command      : upgrade_ip
 | Device       : xc7z020clg400-1
 ---------------------------------------------------------------------------------------------------------------------------------------------
@@ -12,7 +12,54 @@ Upgrade Log for IP 'design_1_QSPI_top_0_4'
 1. Summary
 ----------
 
-SUCCESS in the upgrade of design_1_QSPI_top_0_4 from xilinx.com:user:QSPI_top:1.3 (Rev. 2) to xilinx.com:user:QSPI_top:1.4 (Rev. 2)
+CAUTION (success, with warnings) in the update of design_1_QSPI_top_0_4 (xilinx.com:user:QSPI_top:1.5 (Rev. 2)) to current project options.
+
+After upgrade, an IP may have parameter and port differences compared to the original customization. Please review the parameters within the IP customization GUI to ensure proper functionality. Also, please review the updated IP instantiation template to ensure proper connectivity, and update your design if required.
+
+2. Connection Warnings
+----------------------
+
+Detected external port differences while upgrading 'design_1_QSPI_top_0_4'. These changes may impact your design.
+
+
+-Upgrade has removed port 'INT'
+
+-Upgrade has added port 'INTn'
+
+
+
+
+
+
+
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
+---------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2023.2 (win64) Build 4029153 Fri Oct 13 20:14:34 MDT 2023
+| Date         : Tue Feb  4 13:14:15 2025
+| Host         : 2XZQ4M3 running 64-bit major release  (build 9200)
+| Command      : upgrade_ip
+| Device       : xc7z020clg400-1
+---------------------------------------------------------------------------------------------------------------------------------------------
+
+Upgrade Log for IP 'design_1_QSPI_top_0_4'
+
+1. Summary
+----------
+
+CAUTION (success, with warnings) in the upgrade of design_1_QSPI_top_0_4 from xilinx.com:user:QSPI_top:1.3 (Rev. 2) to xilinx.com:user:QSPI_top:1.5 (Rev. 2)
+
+After upgrade, an IP may have parameter and port differences compared to the original customization. Please review the parameters within the IP customization GUI to ensure proper functionality. Also, please review the updated IP instantiation template to ensure proper connectivity, and update your design if required.
+
+2. Connection Warnings
+----------------------
+
+Detected external port differences while upgrading 'design_1_QSPI_top_0_4'. These changes may impact your design.
+
+
+-Upgrade has added port 'GPIO'
+
+-Upgrade has added port 'INT'
+
 
 
 

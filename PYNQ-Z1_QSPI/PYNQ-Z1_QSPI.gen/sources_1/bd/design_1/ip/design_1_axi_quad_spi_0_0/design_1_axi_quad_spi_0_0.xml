@@ -2594,7 +2594,7 @@ When set to:   0 - Default.   1 - When the core is configured in dual/quad SPI m
 The slaves are numbered right to left starting at zero with the LSB. The slave numbers correspond to the indexes of signal SS
 </spirit:description>
             <spirit:bitOffset>0</spirit:bitOffset>
-            <spirit:bitWidth spirit:format="long" spirit:resolve="dependent" spirit:dependency="(spirit:decode(id(&apos;MODELPARAM_VALUE.C_NUM_SS_BITS&apos;)))">2</spirit:bitWidth>
+            <spirit:bitWidth spirit:format="long" spirit:resolve="dependent" spirit:dependency="(spirit:decode(id(&apos;MODELPARAM_VALUE.C_NUM_SS_BITS&apos;)))">1</spirit:bitWidth>
             <spirit:volatile>true</spirit:volatile>
             <spirit:access>read-write</spirit:access>
             <spirit:writeValueConstraint>
@@ -3875,7 +3875,7 @@ When set to:   0 - Default.   1 - When the core is configured in dual/quad SPI m
 The slaves are numbered right to left starting at zero with the LSB. The slave numbers correspond to the indexes of signal SS
 </spirit:description>
             <spirit:bitOffset>0</spirit:bitOffset>
-            <spirit:bitWidth spirit:format="long" spirit:resolve="dependent" spirit:dependency="(spirit:decode(id(&apos;MODELPARAM_VALUE.C_NUM_SS_BITS&apos;)))">2</spirit:bitWidth>
+            <spirit:bitWidth spirit:format="long" spirit:resolve="dependent" spirit:dependency="(spirit:decode(id(&apos;MODELPARAM_VALUE.C_NUM_SS_BITS&apos;)))">1</spirit:bitWidth>
             <spirit:volatile>true</spirit:volatile>
             <spirit:access>read-write</spirit:access>
             <spirit:writeValueConstraint>
@@ -4643,7 +4643,7 @@ This bit has no significance in dual or quad mode.
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>outputProductCRC</spirit:name>
-            <spirit:value>9:33aa49cb</spirit:value>
+            <spirit:value>9:d7dd379d</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -4689,7 +4689,7 @@ This bit has no significance in dual or quad mode.
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>outputProductCRC</spirit:name>
-            <spirit:value>9:e1446125</spirit:value>
+            <spirit:value>9:903a5020</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -4703,11 +4703,11 @@ This bit has no significance in dual or quad mode.
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>GENtimestamp</spirit:name>
-            <spirit:value>Fri Nov 08 06:18:41 UTC 2024</spirit:value>
+            <spirit:value>Tue Feb 04 21:50:46 UTC 2025</spirit:value>
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>outputProductCRC</spirit:name>
-            <spirit:value>9:e1446125</spirit:value>
+            <spirit:value>9:903a5020</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -4718,7 +4718,7 @@ This bit has no significance in dual or quad mode.
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>outputProductCRC</spirit:name>
-            <spirit:value>9:e1446125</spirit:value>
+            <spirit:value>9:903a5020</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -4734,11 +4734,11 @@ This bit has no significance in dual or quad mode.
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>GENtimestamp</spirit:name>
-            <spirit:value>Fri Nov 08 06:18:41 UTC 2024</spirit:value>
+            <spirit:value>Tue Feb 04 21:50:46 UTC 2025</spirit:value>
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>outputProductCRC</spirit:name>
-            <spirit:value>9:33aa49cb</spirit:value>
+            <spirit:value>9:d7dd379d</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -4754,11 +4754,11 @@ This bit has no significance in dual or quad mode.
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>GENtimestamp</spirit:name>
-            <spirit:value>Fri Nov 08 06:18:41 UTC 2024</spirit:value>
+            <spirit:value>Tue Feb 04 21:50:46 UTC 2025</spirit:value>
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>outputProductCRC</spirit:name>
-            <spirit:value>9:e1446125</spirit:value>
+            <spirit:value>9:903a5020</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -6724,7 +6724,7 @@ This bit has no significance in dual or quad mode.
         <spirit:wire>
           <spirit:direction>in</spirit:direction>
           <spirit:vector>
-            <spirit:left spirit:format="long" spirit:resolve="dependent" spirit:dependency="(spirit:decode(id(&apos;PARAM_VALUE.C_NUM_SS_BITS&apos;)) - 1 - (spirit:decode(id(&apos;PARAM_VALUE.C_DUAL_QUAD_MODE&apos;))))">1</spirit:left>
+            <spirit:left spirit:format="long" spirit:resolve="dependent" spirit:dependency="(spirit:decode(id(&apos;PARAM_VALUE.C_NUM_SS_BITS&apos;)) - 1 - (spirit:decode(id(&apos;PARAM_VALUE.C_DUAL_QUAD_MODE&apos;))))">0</spirit:left>
             <spirit:right spirit:format="long" spirit:resolve="dependent" spirit:dependency="(spirit:decode(id(&apos;MODELPARAM_VALUE.C_LSB_STUP&apos;)))">0</spirit:right>
           </spirit:vector>
           <spirit:wireTypeDefs>
@@ -6751,7 +6751,7 @@ This bit has no significance in dual or quad mode.
         <spirit:wire>
           <spirit:direction>out</spirit:direction>
           <spirit:vector>
-            <spirit:left spirit:format="long" spirit:resolve="dependent" spirit:dependency="(spirit:decode(id(&apos;PARAM_VALUE.C_NUM_SS_BITS&apos;)) - 1 - (spirit:decode(id(&apos;PARAM_VALUE.C_DUAL_QUAD_MODE&apos;))))">1</spirit:left>
+            <spirit:left spirit:format="long" spirit:resolve="dependent" spirit:dependency="(spirit:decode(id(&apos;PARAM_VALUE.C_NUM_SS_BITS&apos;)) - 1 - (spirit:decode(id(&apos;PARAM_VALUE.C_DUAL_QUAD_MODE&apos;))))">0</spirit:left>
             <spirit:right spirit:format="long" spirit:resolve="dependent" spirit:dependency="(spirit:decode(id(&apos;MODELPARAM_VALUE.C_LSB_STUP&apos;)))">0</spirit:right>
           </spirit:vector>
           <spirit:wireTypeDefs>
@@ -7203,7 +7203,7 @@ This bit has no significance in dual or quad mode.
       <spirit:modelParameter spirit:dataType="integer">
         <spirit:name>C_NUM_SS_BITS</spirit:name>
         <spirit:displayName>No. of Slave Select Bits</spirit:displayName>
-        <spirit:value spirit:format="long" spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.C_NUM_SS_BITS" spirit:minimum="1" spirit:maximum="32" spirit:rangeType="long">2</spirit:value>
+        <spirit:value spirit:format="long" spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.C_NUM_SS_BITS" spirit:minimum="1" spirit:maximum="32" spirit:rangeType="long">1</spirit:value>
       </spirit:modelParameter>
       <spirit:modelParameter spirit:dataType="integer">
         <spirit:name>C_NUM_TRANSFER_BITS</spirit:name>
@@ -7977,7 +7977,7 @@ This bit has no significance in dual or quad mode.
       <spirit:name>C_NUM_SS_BITS</spirit:name>
       <spirit:displayName>No. of Slave Select Bits</spirit:displayName>
       <spirit:description>This parameter should be set to choose the no. SPI slave memories in design. This parameter decides the length of Slave Select port width of the core.</spirit:description>
-      <spirit:value spirit:format="long" spirit:resolve="user" spirit:id="PARAM_VALUE.C_NUM_SS_BITS" spirit:order="80" spirit:minimum="1" spirit:maximum="32" spirit:rangeType="long">2</spirit:value>
+      <spirit:value spirit:format="long" spirit:resolve="user" spirit:id="PARAM_VALUE.C_NUM_SS_BITS" spirit:order="80" spirit:minimum="1" spirit:maximum="32" spirit:rangeType="long">1</spirit:value>
       <spirit:vendorExtensions>
         <xilinx:parameterInfo>
           <xilinx:enablement>

@@ -109,11 +109,11 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>GENtimestamp</spirit:name>
-            <spirit:value>Fri Jan 31 23:08:38 UTC 2025</spirit:value>
+            <spirit:value>Tue Feb 04 21:18:12 UTC 2025</spirit:value>
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>outputProductCRC</spirit:name>
-            <spirit:value>9:79ae8074</spirit:value>
+            <spirit:value>9:d196e957</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -128,11 +128,11 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>GENtimestamp</spirit:name>
-            <spirit:value>Fri Jan 31 23:08:38 UTC 2025</spirit:value>
+            <spirit:value>Tue Feb 04 21:18:12 UTC 2025</spirit:value>
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>outputProductCRC</spirit:name>
-            <spirit:value>9:9a9c7972</spirit:value>
+            <spirit:value>9:07dd9ba0</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -143,7 +143,7 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>outputProductCRC</spirit:name>
-            <spirit:value>9:9a9c7972</spirit:value>
+            <spirit:value>9:07dd9ba0</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -159,11 +159,11 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>GENtimestamp</spirit:name>
-            <spirit:value>Fri Jan 31 23:08:38 UTC 2025</spirit:value>
+            <spirit:value>Tue Feb 04 21:18:12 UTC 2025</spirit:value>
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>outputProductCRC</spirit:name>
-            <spirit:value>9:79ae8074</spirit:value>
+            <spirit:value>9:d196e957</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -179,11 +179,11 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>GENtimestamp</spirit:name>
-            <spirit:value>Fri Jan 31 23:08:38 UTC 2025</spirit:value>
+            <spirit:value>Tue Feb 04 21:18:12 UTC 2025</spirit:value>
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>outputProductCRC</spirit:name>
-            <spirit:value>9:9a9c7972</spirit:value>
+            <spirit:value>9:07dd9ba0</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -337,20 +337,54 @@
           </spirit:driver>
         </spirit:wire>
       </spirit:port>
+      <spirit:port>
+        <spirit:name>INTn</spirit:name>
+        <spirit:wire>
+          <spirit:direction>in</spirit:direction>
+          <spirit:vector>
+            <spirit:left spirit:format="long">5</spirit:left>
+            <spirit:right spirit:format="long">0</spirit:right>
+          </spirit:vector>
+          <spirit:wireTypeDefs>
+            <spirit:wireTypeDef>
+              <spirit:typeName>STD_LOGIC_VECTOR</spirit:typeName>
+              <spirit:viewNameRef>xilinx_anylanguagesynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_anylanguagebehavioralsimulation</spirit:viewNameRef>
+            </spirit:wireTypeDef>
+          </spirit:wireTypeDefs>
+        </spirit:wire>
+      </spirit:port>
+      <spirit:port>
+        <spirit:name>GPIO</spirit:name>
+        <spirit:wire>
+          <spirit:direction>out</spirit:direction>
+          <spirit:vector>
+            <spirit:left spirit:format="long">6</spirit:left>
+            <spirit:right spirit:format="long">0</spirit:right>
+          </spirit:vector>
+          <spirit:wireTypeDefs>
+            <spirit:wireTypeDef>
+              <spirit:typeName>STD_LOGIC_VECTOR</spirit:typeName>
+              <spirit:viewNameRef>xilinx_anylanguagesynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_anylanguagebehavioralsimulation</spirit:viewNameRef>
+            </spirit:wireTypeDef>
+          </spirit:wireTypeDefs>
+        </spirit:wire>
+      </spirit:port>
     </spirit:ports>
   </spirit:model>
   <spirit:fileSets>
     <spirit:fileSet>
       <spirit:name>xilinx_anylanguagebehavioralsimulation_view_fileset</spirit:name>
       <spirit:file>
-        <spirit:name>../../ipshared/8b22/QSPI_top.vhd</spirit:name>
+        <spirit:name>../../ipshared/48df/QSPI_top.vhd</spirit:name>
         <spirit:fileType>vhdlSource</spirit:fileType>
       </spirit:file>
     </spirit:fileSet>
     <spirit:fileSet>
       <spirit:name>xilinx_anylanguagesynthesis_view_fileset</spirit:name>
       <spirit:file>
-        <spirit:name>../../ipshared/8b22/QSPI_top.vhd</spirit:name>
+        <spirit:name>../../ipshared/48df/QSPI_top.vhd</spirit:name>
         <spirit:fileType>vhdlSource</spirit:fileType>
       </spirit:file>
     </spirit:fileSet>
@@ -371,7 +405,7 @@
       </spirit:file>
     </spirit:fileSet>
   </spirit:fileSets>
-  <spirit:description>QSPI_top_v1_4 - fix ENDIAN change feature (bit 7)</spirit:description>
+  <spirit:description>QSPI with INT and GPIO</spirit:description>
   <spirit:parameters>
     <spirit:parameter>
       <spirit:name>Component_Name</spirit:name>
@@ -380,7 +414,7 @@
   </spirit:parameters>
   <spirit:vendorExtensions>
     <xilinx:coreExtensions>
-      <xilinx:displayName>QSPI_top_v1_4</xilinx:displayName>
+      <xilinx:displayName>QSPI_top_v1_5</xilinx:displayName>
       <xilinx:definitionSource>package_project</xilinx:definitionSource>
       <xilinx:coreRevision>2</xilinx:coreRevision>
       <xilinx:tags>

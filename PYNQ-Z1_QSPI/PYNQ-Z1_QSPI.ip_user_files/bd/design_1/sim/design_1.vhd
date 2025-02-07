@@ -2,8 +2,8 @@
 --Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------
 --Tool Version: Vivado v.2023.2 (win64) Build 4029153 Fri Oct 13 20:14:34 MDT 2023
---Date        : Fri Jan 31 15:08:37 2025
---Host        : LAPTOP-TJAEKEL2 running 64-bit major release  (build 9200)
+--Date        : Tue Feb  4 13:18:11 2025
+--Host        : 2XZQ4M3 running 64-bit major release  (build 9200)
 --Command     : generate_target design_1.bd
 --Design      : design_1
 --Purpose     : IP block netlist
@@ -1786,7 +1786,9 @@ architecture STRUCTURE of design_1 is
     QCLK : out STD_LOGIC;
     QD : inout STD_LOGIC_VECTOR ( 3 downto 0 );
     CS : out STD_LOGIC_VECTOR ( 3 downto 0 );
-    DIR : out STD_LOGIC_VECTOR ( 1 downto 0 )
+    DIR : out STD_LOGIC_VECTOR ( 1 downto 0 );
+    INTn : in STD_LOGIC_VECTOR ( 5 downto 0 );
+    GPIO : out STD_LOGIC_VECTOR ( 6 downto 0 )
   );
   end component design_1_QSPI_top_0_4;
   signal Net : STD_LOGIC_VECTOR ( 3 downto 0 );
@@ -1940,6 +1942,7 @@ architecture STRUCTURE of design_1 is
   signal ps7_0_axi_periph_M03_AXI_WSTRB : STD_LOGIC_VECTOR ( 3 downto 0 );
   signal ps7_0_axi_periph_M03_AXI_WVALID : STD_LOGIC;
   signal rst_ps7_0_100M_peripheral_aresetn : STD_LOGIC_VECTOR ( 0 to 0 );
+  signal NLW_QSPI_top_0_GPIO_UNCONNECTED : STD_LOGIC_VECTOR ( 6 downto 0 );
   signal NLW_axi_quad_spi_0_ip2intc_irpt_UNCONNECTED : STD_LOGIC;
   signal NLW_clk_wiz_0_locked_UNCONNECTED : STD_LOGIC;
   signal NLW_processing_system7_0_USB0_VBUS_PWRSELECT_UNCONNECTED : STD_LOGIC;
@@ -2006,6 +2009,8 @@ QSPI_top_0: component design_1_QSPI_top_0_4
       CS(3 downto 0) => QSPI_top_0_CS(3 downto 0),
       CTL_REG(31 downto 0) => axi_gpio_1_gpio_io_o(31 downto 0),
       DIR(1 downto 0) => QSPI_top_0_DIR(1 downto 0),
+      GPIO(6 downto 0) => NLW_QSPI_top_0_GPIO_UNCONNECTED(6 downto 0),
+      INTn(5 downto 0) => B"000000",
       QCLK => QSPI_top_0_QCLK,
       QD(3 downto 0) => QD_0(3 downto 0),
       RD_REG(31 downto 0) => QSPI_top_0_RD_REG(31 downto 0),

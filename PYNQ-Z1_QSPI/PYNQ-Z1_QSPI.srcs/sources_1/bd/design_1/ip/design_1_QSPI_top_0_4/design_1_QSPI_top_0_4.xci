@@ -3,7 +3,7 @@
   "ip_inst": {
     "xci_name": "design_1_QSPI_top_0_4",
     "cell_name": "QSPI_top_0",
-    "component_reference": "xilinx.com:user:QSPI_top:1.4",
+    "component_reference": "xilinx.com:user:QSPI_top:1.5",
     "ip_revision": "2",
     "gen_directory": "../../../../../../PYNQ-Z1_QSPI.gen/sources_1/bd/design_1/ip/design_1_QSPI_top_0_4",
     "parameters": {
@@ -44,7 +44,9 @@
         "QCLK": [ { "direction": "out" } ],
         "QD": [ { "direction": "inout", "size_left": "3", "size_right": "0" } ],
         "CS": [ { "direction": "out", "size_left": "3", "size_right": "0" } ],
-        "DIR": [ { "direction": "out", "size_left": "1", "size_right": "0", "driver_value": "11" } ]
+        "DIR": [ { "direction": "out", "size_left": "1", "size_right": "0", "driver_value": "11" } ],
+        "INTn": [ { "direction": "in", "size_left": "5", "size_right": "0" } ],
+        "GPIO": [ { "direction": "out", "size_left": "6", "size_right": "0" } ]
       },
       "interfaces": {
         "S_CLK": {

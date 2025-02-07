@@ -97,7 +97,7 @@ set_property -dict {PACKAGE_PIN T12 IOSTANDARD LVCMOS33} [get_ports {spi_io0_io}
 set_property -dict {PACKAGE_PIN H15 IOSTANDARD LVCMOS33} [get_ports {spi_sck_io}]
 ##nSS
 set_property -dict {PACKAGE_PIN F16 IOSTANDARD LVCMOS33} [get_ports {spi_ss_io[0]}]
-set_property -dict {PACKAGE_PIN T14 IOSTANDARD LVCMOS33} [get_ports {spi_ss_io[1]}]
+#set_property -dict {PACKAGE_PIN T14 IOSTANDARD LVCMOS33} [get_ports {spi_ss_io[1]}]
 
 #set_property -dict {PACKAGE_PIN V16 IOSTANDARD LVCMOS33} [get_ports {pmodb_gpio_tri_io[4]}]
 #set_property -dict {PACKAGE_PIN W13 IOSTANDARD LVCMOS33} [get_ports {pmodb_gpio_tri_io[7]}]
@@ -126,6 +126,28 @@ set_property -dict {PACKAGE_PIN U7  IOSTANDARD LVCMOS33} [get_ports {CS_0[3]}]
 
 set_property -dict {PACKAGE_PIN V10 IOSTANDARD LVCMOS33} [get_ports {DIR[0]}]
 set_property -dict {PACKAGE_PIN U17 IOSTANDARD LVCMOS33} [get_ports {DIR[1]}]
+##INT0..5
+set_property -dict {PACKAGE_PIN Y9  IOSTANDARD LVCMOS33} [get_ports {INTn[0]}]
+set_property -dict {PACKAGE_PIN V6  IOSTANDARD LVCMOS33} [get_ports {INTn[1]}]
+set_property -dict {PACKAGE_PIN V5  IOSTANDARD LVCMOS33} [get_ports {INTn[2]}]
+set_property -dict {PACKAGE_PIN U5  IOSTANDARD LVCMOS33} [get_ports {INTn[3]}]
+set_property -dict {PACKAGE_PIN V18 IOSTANDARD LVCMOS33} [get_ports {INTn[4]}]
+set_property -dict {PACKAGE_PIN W6  IOSTANDARD LVCMOS33} [get_ports {INTn[5]}]
+##GPIO6..0
+set_property -dict {PACKAGE_PIN T16 IOSTANDARD LVCMOS33} [get_ports {GPIO[0]}]
+set_property -dict {PACKAGE_PIN Y6  IOSTANDARD LVCMOS33} [get_ports {GPIO[1]}]
+set_property -dict {PACKAGE_PIN Y8  IOSTANDARD LVCMOS33} [get_ports {GPIO[2]}]
+set_property -dict {PACKAGE_PIN N17 IOSTANDARD LVCMOS33} [get_ports {GPIO[3]}]
+set_property -dict {PACKAGE_PIN W9  IOSTANDARD LVCMOS33} [get_ports {GPIO[4]}]
+set_property -dict {PACKAGE_PIN P18 IOSTANDARD LVCMOS33} [get_ports {GPIO[5]}]
+set_property -dict {PACKAGE_PIN Y13 IOSTANDARD LVCMOS33} [get_ports {GPIO[6]}]
+##DIR1, DIR2a..2d, DIR3
+set_property -dict {PACKAGE_PIN T14 IOSTANDARD LVCMOS33} [get_ports {DIR1}]
+set_property -dict {PACKAGE_PIN V17 IOSTANDARD LVCMOS33} [get_ports {DIR2a}]
+set_property -dict {PACKAGE_PIN W10 IOSTANDARD LVCMOS33} [get_ports {DIR2b}]
+set_property -dict {PACKAGE_PIN R17 IOSTANDARD LVCMOS33} [get_ports {DIR2c}]
+set_property -dict {PACKAGE_PIN Y7  IOSTANDARD LVCMOS33} [get_ports {DIR2d}]
+set_property -dict {PACKAGE_PIN W8  IOSTANDARD LVCMOS33} [get_ports {DIR3}]
 
 #set_input_delay -max $in_max_dly [get_ports QD_0[*]]
 #set_input_delay -min $in_min_dly [get_ports QD_0[*]]

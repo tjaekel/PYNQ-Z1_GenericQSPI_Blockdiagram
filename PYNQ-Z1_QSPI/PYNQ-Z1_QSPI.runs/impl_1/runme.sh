@@ -12,9 +12,9 @@ echo "Please update the PATH and LD_LIBRARY_PATH variables below, before executi
 exit
 
 if [ -z "$PATH" ]; then
-  PATH=D:/Xilinx/Vitis/2023.2/bin;D:/Xilinx/Vivado/2023.2/ids_lite/ISE/bin/nt64;D:/Xilinx/Vivado/2023.2/ids_lite/ISE/lib/nt64:D:/Xilinx/Vivado/2023.2/bin
+  PATH=C:/Xilinx/Vivado/2023.2/ids_lite/ISE/bin/nt64;C:/Xilinx/Vivado/2023.2/ids_lite/ISE/lib/nt64:C:/Xilinx/Vivado/2023.2/bin
 else
-  PATH=D:/Xilinx/Vitis/2023.2/bin;D:/Xilinx/Vivado/2023.2/ids_lite/ISE/bin/nt64;D:/Xilinx/Vivado/2023.2/ids_lite/ISE/lib/nt64:D:/Xilinx/Vivado/2023.2/bin:$PATH
+  PATH=C:/Xilinx/Vivado/2023.2/ids_lite/ISE/bin/nt64;C:/Xilinx/Vivado/2023.2/ids_lite/ISE/lib/nt64:C:/Xilinx/Vivado/2023.2/bin:$PATH
 fi
 export PATH
 
@@ -25,7 +25,7 @@ else
 fi
 export LD_LIBRARY_PATH
 
-HD_PWD='C:/Users/tj/Documents/Xilinx_Projects/PYNQ-Z1_QSPI/PYNQ-Z1_QSPI.runs/impl_1'
+HD_PWD='C:/Users/tj925438/Documents/Xilinx_WS/PYNQ-Z1_QSPI/PYNQ-Z1_QSPI.runs/impl_1'
 cd "$HD_PWD"
 
 HD_LOG=runme.log
