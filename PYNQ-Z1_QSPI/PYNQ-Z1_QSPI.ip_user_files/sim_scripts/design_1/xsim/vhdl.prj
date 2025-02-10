@@ -17,6 +17,7 @@ vhdl xil_defaultlib  \
 "../../../bd/design_1/ip/design_1_axi_gpio_1_0/sim/design_1_axi_gpio_1_0.vhd" \
 "../../../bd/design_1/ipshared/48df/QSPI_top.vhd" \
 "../../../bd/design_1/ip/design_1_QSPI_top_0_4/sim/design_1_QSPI_top_0_4.vhd" \
+"../../../bd/design_1/ip/design_1_axi_iic_0_0/sim/design_1_axi_iic_0_0.vhd" \
 "../../../bd/design_1/sim/design_1.vhd" \
 
 # Do not sort compile order

@@ -1,4 +1,4 @@
-#/usr/bin/python
+#!/usr/bin/env python
 
 #Generic QSPI Python Library: PYNQ with Generic_QSPI PL overlay
 from pynq import Overlay

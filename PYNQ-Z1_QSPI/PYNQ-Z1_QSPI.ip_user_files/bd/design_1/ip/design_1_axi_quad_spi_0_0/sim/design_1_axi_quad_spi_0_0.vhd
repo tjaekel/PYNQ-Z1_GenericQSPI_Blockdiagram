@@ -1,5 +1,5 @@
 -- (c) Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
--- (c) Copyright 2022-2024 Advanced Micro Devices, Inc. All rights reserved.
+-- (c) Copyright 2022-2025 Advanced Micro Devices, Inc. All rights reserved.
 -- 
 -- This file contains confidential and proprietary information
 -- of AMD and is protected under U.S. and international copyright
@@ -87,8 +87,8 @@ ENTITY design_1_axi_quad_spi_0_0 IS
     sck_i : IN STD_LOGIC;
     sck_o : OUT STD_LOGIC;
     sck_t : OUT STD_LOGIC;
-    ss_i : IN STD_LOGIC_VECTOR(1 DOWNTO 0);
-    ss_o : OUT STD_LOGIC_VECTOR(1 DOWNTO 0);
+    ss_i : IN STD_LOGIC_VECTOR(0 DOWNTO 0);
+    ss_o : OUT STD_LOGIC_VECTOR(0 DOWNTO 0);
     ss_t : OUT STD_LOGIC;
     ip2intc_irpt : OUT STD_LOGIC
   );
@@ -216,8 +216,8 @@ ARCHITECTURE design_1_axi_quad_spi_0_0_arch OF design_1_axi_quad_spi_0_0 IS
       sck_i : IN STD_LOGIC;
       sck_o : OUT STD_LOGIC;
       sck_t : OUT STD_LOGIC;
-      ss_i : IN STD_LOGIC_VECTOR(1 DOWNTO 0);
-      ss_o : OUT STD_LOGIC_VECTOR(1 DOWNTO 0);
+      ss_i : IN STD_LOGIC_VECTOR(0 DOWNTO 0);
+      ss_o : OUT STD_LOGIC_VECTOR(0 DOWNTO 0);
       ss_t : OUT STD_LOGIC;
       ss_1_i : IN STD_LOGIC;
       ss_1_o : OUT STD_LOGIC;
@@ -239,7 +239,7 @@ ARCHITECTURE design_1_axi_quad_spi_0_0_arch OF design_1_axi_quad_spi_0_0 IS
   END COMPONENT axi_quad_spi;
   ATTRIBUTE X_INTERFACE_INFO : STRING;
   ATTRIBUTE X_INTERFACE_PARAMETER : STRING;
-  ATTRIBUTE X_INTERFACE_PARAMETER OF ext_spi_clk: SIGNAL IS "XIL_INTERFACENAME spi_clk, ASSOCIATED_BUSIF SPI_0, FREQ_HZ 100000000, FREQ_TOLERANCE_HZ 0, PHASE 0.0, CLK_DOMAIN /clk_wiz_0_clk_out1, INSERT_VIP 0";
+  ATTRIBUTE X_INTERFACE_PARAMETER OF ext_spi_clk: SIGNAL IS "XIL_INTERFACENAME spi_clk, ASSOCIATED_BUSIF SPI_0, FREQ_HZ 125000000, FREQ_TOLERANCE_HZ 0, PHASE 0.0, CLK_DOMAIN /clk_wiz_0_clk_out1, INSERT_VIP 0";
   ATTRIBUTE X_INTERFACE_INFO OF ext_spi_clk: SIGNAL IS "xilinx.com:signal:clock:1.0 spi_clk CLK";
   ATTRIBUTE X_INTERFACE_PARAMETER OF io0_i: SIGNAL IS "XIL_INTERFACENAME SPI_0, BOARD.ASSOCIATED_PARAM QSPI_BOARD_INTERFACE";
   ATTRIBUTE X_INTERFACE_INFO OF io0_i: SIGNAL IS "xilinx.com:interface:spi:1.0 SPI_0 IO0_I";
@@ -296,7 +296,7 @@ BEGIN
       C_FIFO_DEPTH => 16,
       C_SCK_RATIO => 4,
       C_DUAL_QUAD_MODE => 0,
-      C_NUM_SS_BITS => 2,
+      C_NUM_SS_BITS => 1,
       C_NUM_TRANSFER_BITS => 8,
       C_NEW_SEQ_EN => 1,
       C_SPI_MODE => 0,

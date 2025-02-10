@@ -1,8 +1,8 @@
 Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
 ---------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2023.2 (win64) Build 4029153 Fri Oct 13 20:14:34 MDT 2023
-| Date         : Tue Feb  4 13:52:58 2025
-| Host         : 2XZQ4M3 running 64-bit major release  (build 9200)
+| Date         : Sun Feb  9 16:02:22 2025
+| Host         : LAPTOP-TJAEKEL2 running 64-bit major release  (build 9200)
 | Command      : report_utilization -file design_1_wrapper_utilization_synth.rpt -pb design_1_wrapper_utilization_synth.pb
 | Design       : design_1_wrapper
 | Device       : xc7z020clg400-1
@@ -31,8 +31,8 @@ Table of Contents
 +----------------------------+------+-------+------------+-----------+-------+
 |          Site Type         | Used | Fixed | Prohibited | Available | Util% |
 +----------------------------+------+-------+------------+-----------+-------+
-| Slice LUTs*                | 2995 |     0 |          0 |     53200 |  5.63 |
-|   LUT as Logic             | 2895 |     0 |          0 |     53200 |  5.44 |
+| Slice LUTs*                | 2989 |     0 |          0 |     53200 |  5.62 |
+|   LUT as Logic             | 2889 |     0 |          0 |     53200 |  5.43 |
 |   LUT as Memory            |  100 |     0 |          0 |     17400 |  0.57 |
 |     LUT as Distributed RAM |   16 |     0 |            |           |       |
 |     LUT as Shift Register  |   84 |     0 |            |           |       |
@@ -151,11 +151,11 @@ Warning! LUT value is adjusted to account for LUT combining.
 |  Ref Name  | Used |  Functional Category |
 +------------+------+----------------------+
 | FDRE       | 3744 |         Flop & Latch |
-| LUT6       | 1160 |                  LUT |
-| LUT2       |  647 |                  LUT |
-| LUT3       |  646 |                  LUT |
-| LUT5       |  567 |                  LUT |
-| LUT4       |  416 |                  LUT |
+| LUT6       | 1161 |                  LUT |
+| LUT2       |  648 |                  LUT |
+| LUT3       |  643 |                  LUT |
+| LUT5       |  563 |                  LUT |
+| LUT4       |  417 |                  LUT |
 | FDSE       |  193 |         Flop & Latch |
 | MUXF7      |  142 |                MuxFx |
 | BIBUF      |  130 |                   IO |

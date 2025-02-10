@@ -3231,9 +3231,9 @@
           "ps7_0_axi_periph/ACLK",
           "rst_ps7_0_100M/slowest_sync_clk",
           "clk_wiz_0/clk_in1",
-          "QSPI_top_0/S_CLK",
           "axi_iic_0/s_axi_aclk",
-          "ps7_0_axi_periph/M04_ACLK"
+          "ps7_0_axi_periph/M04_ACLK",
+          "QSPI_top_0/S_CLK"
         ]
       },
       "processing_system7_0_FCLK_RESET0_N": {

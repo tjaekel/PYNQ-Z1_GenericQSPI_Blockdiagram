@@ -3,12 +3,12 @@
 # SW Build 4029153 on Fri Oct 13 20:14:34 MDT 2023
 # IP Build 4028589 on Sat Oct 14 00:45:43 MDT 2023
 # SharedData Build 4025554 on Tue Oct 10 17:18:54 MDT 2023
-# Start of session at: Tue Feb  4 13:53:06 2025
-# Process ID: 25488
-# Current directory: C:/Users/tj925438/Documents/Xilinx_WS/PYNQ-Z1_QSPI/PYNQ-Z1_QSPI.runs/impl_1
+# Start of session at: Sun Feb  9 16:02:33 2025
+# Process ID: 7836
+# Current directory: C:/Users/tj/Documents/Xilinx_Projects/PYNQ-Z1_QSPI/PYNQ-Z1_QSPI.runs/impl_1
 # Command line: vivado.exe -log design_1_wrapper.vdi -applog -product Vivado -messageDb vivado.pb -mode batch -source design_1_wrapper.tcl -notrace
-# Log file: C:/Users/tj925438/Documents/Xilinx_WS/PYNQ-Z1_QSPI/PYNQ-Z1_QSPI.runs/impl_1/design_1_wrapper.vdi
-# Journal file: C:/Users/tj925438/Documents/Xilinx_WS/PYNQ-Z1_QSPI/PYNQ-Z1_QSPI.runs/impl_1\vivado.jou
-# Running On: 2XZQ4M3, OS: Windows, CPU Frequency: 2611 MHz, CPU Physical cores: 8, Host memory: 68425 MB
+# Log file: C:/Users/tj/Documents/Xilinx_Projects/PYNQ-Z1_QSPI/PYNQ-Z1_QSPI.runs/impl_1/design_1_wrapper.vdi
+# Journal file: C:/Users/tj/Documents/Xilinx_Projects/PYNQ-Z1_QSPI/PYNQ-Z1_QSPI.runs/impl_1\vivado.jou
+# Running On: LAPTOP-TJAEKEL2, OS: Windows, CPU Frequency: 2904 MHz, CPU Physical cores: 4, Host memory: 34321 MB
 #-----------------------------------------------------------
 source design_1_wrapper.tcl -notrace

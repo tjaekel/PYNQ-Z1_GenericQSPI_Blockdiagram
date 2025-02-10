@@ -2,8 +2,8 @@
 --Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------
 --Tool Version: Vivado v.2023.2 (win64) Build 4029153 Fri Oct 13 20:14:34 MDT 2023
---Date        : Tue Feb  4 13:50:46 2025
---Host        : 2XZQ4M3 running 64-bit major release  (build 9200)
+--Date        : Sun Feb  9 15:59:24 2025
+--Host        : LAPTOP-TJAEKEL2 running 64-bit major release  (build 9200)
 --Command     : generate_target design_1_wrapper.bd
 --Design      : design_1_wrapper
 --Purpose     : IP block netlist
@@ -92,6 +92,12 @@ architecture STRUCTURE of design_1_wrapper is
     spi_ss_i : in STD_LOGIC_VECTOR ( 0 to 0 );
     spi_ss_o : out STD_LOGIC_VECTOR ( 0 to 0 );
     spi_ss_t : out STD_LOGIC;
+    i2c_scl_i : in STD_LOGIC;
+    i2c_scl_o : out STD_LOGIC;
+    i2c_scl_t : out STD_LOGIC;
+    i2c_sda_i : in STD_LOGIC;
+    i2c_sda_o : out STD_LOGIC;
+    i2c_sda_t : out STD_LOGIC;
     QCLK_0 : out STD_LOGIC;
     QD_0 : inout STD_LOGIC_VECTOR ( 3 downto 0 );
     CS_0 : out STD_LOGIC_VECTOR ( 3 downto 0 );
@@ -103,13 +109,7 @@ architecture STRUCTURE of design_1_wrapper is
     DIR2a : out STD_LOGIC_VECTOR ( 0 to 0 );
     DIR2b : out STD_LOGIC_VECTOR ( 0 to 0 );
     DIR2c : out STD_LOGIC_VECTOR ( 0 to 0 );
-    DIR2d : out STD_LOGIC_VECTOR ( 0 to 0 );
-    i2c_scl_i : in STD_LOGIC;
-    i2c_scl_o : out STD_LOGIC;
-    i2c_scl_t : out STD_LOGIC;
-    i2c_sda_i : in STD_LOGIC;
-    i2c_sda_o : out STD_LOGIC;
-    i2c_sda_t : out STD_LOGIC
+    DIR2d : out STD_LOGIC_VECTOR ( 0 to 0 )
   );
   end component design_1;
   component IOBUF is
