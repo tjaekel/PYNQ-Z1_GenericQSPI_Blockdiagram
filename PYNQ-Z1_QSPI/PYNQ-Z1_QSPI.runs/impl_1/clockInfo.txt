@@ -1,7 +1,7 @@
 -------------------------------------
 | Tool Version : Vivado v.2023.2
-| Date         : Sun Feb  9 16:03:28 2025
-| Host         : LAPTOP-TJAEKEL2
+| Date         : Mon Feb 10 14:45:10 2025
+| Host         : 2XZQ4M3
 | Design       : design_1
 | Device       : xc7z020-clg400-1--
 -------------------------------------

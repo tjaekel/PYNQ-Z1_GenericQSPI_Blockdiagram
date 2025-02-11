@@ -1,6 +1,27 @@
 Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
 ---------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2023.2 (win64) Build 4029153 Fri Oct 13 20:14:34 MDT 2023
+| Date         : Mon Feb 10 14:41:22 2025
+| Host         : 2XZQ4M3 running 64-bit major release  (build 9200)
+| Command      : upgrade_ip
+| Device       : xc7z020clg400-1
+---------------------------------------------------------------------------------------------------------------------------------------------
+
+Upgrade Log for IP 'design_1_QSPI_top_0_4'
+
+1. Summary
+----------
+
+SUCCESS in the update of design_1_QSPI_top_0_4 (xilinx.com:user:QSPI_top:1.5 (Rev. 2)) to current project options.
+
+
+
+
+
+
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
+---------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2023.2 (win64) Build 4029153 Fri Oct 13 20:14:34 MDT 2023
 | Date         : Sun Feb  9 15:59:02 2025
 | Host         : LAPTOP-TJAEKEL2 running 64-bit major release  (build 9200)
 | Command      : upgrade_ip

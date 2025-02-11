@@ -51,38 +51,38 @@ vmap xlconstant_v1_1_8 modelsim_lib/msim/xlconstant_v1_1_8
 vmap axi_iic_v2_1_5 modelsim_lib/msim/axi_iic_v2_1_5
 vmap axi_protocol_converter_v2_1_29 modelsim_lib/msim/axi_protocol_converter_v2_1_29
 
-vlog -work xilinx_vip  -incr -mfcu  -sv -L axi_vip_v1_1_15 -L processing_system7_vip_v1_0_17 -L xilinx_vip "+incdir+D:/Xilinx/Vivado/2023.2/data/xilinx_vip/include" \
-"D:/Xilinx/Vivado/2023.2/data/xilinx_vip/hdl/axi4stream_vip_axi4streampc.sv" \
-"D:/Xilinx/Vivado/2023.2/data/xilinx_vip/hdl/axi_vip_axi4pc.sv" \
-"D:/Xilinx/Vivado/2023.2/data/xilinx_vip/hdl/xil_common_vip_pkg.sv" \
-"D:/Xilinx/Vivado/2023.2/data/xilinx_vip/hdl/axi4stream_vip_pkg.sv" \
-"D:/Xilinx/Vivado/2023.2/data/xilinx_vip/hdl/axi_vip_pkg.sv" \
-"D:/Xilinx/Vivado/2023.2/data/xilinx_vip/hdl/axi4stream_vip_if.sv" \
-"D:/Xilinx/Vivado/2023.2/data/xilinx_vip/hdl/axi_vip_if.sv" \
-"D:/Xilinx/Vivado/2023.2/data/xilinx_vip/hdl/clk_vip_if.sv" \
-"D:/Xilinx/Vivado/2023.2/data/xilinx_vip/hdl/rst_vip_if.sv" \
+vlog -work xilinx_vip  -incr -mfcu  -sv -L axi_vip_v1_1_15 -L processing_system7_vip_v1_0_17 -L xilinx_vip "+incdir+C:/Xilinx/Vivado/2023.2/data/xilinx_vip/include" \
+"C:/Xilinx/Vivado/2023.2/data/xilinx_vip/hdl/axi4stream_vip_axi4streampc.sv" \
+"C:/Xilinx/Vivado/2023.2/data/xilinx_vip/hdl/axi_vip_axi4pc.sv" \
+"C:/Xilinx/Vivado/2023.2/data/xilinx_vip/hdl/xil_common_vip_pkg.sv" \
+"C:/Xilinx/Vivado/2023.2/data/xilinx_vip/hdl/axi4stream_vip_pkg.sv" \
+"C:/Xilinx/Vivado/2023.2/data/xilinx_vip/hdl/axi_vip_pkg.sv" \
+"C:/Xilinx/Vivado/2023.2/data/xilinx_vip/hdl/axi4stream_vip_if.sv" \
+"C:/Xilinx/Vivado/2023.2/data/xilinx_vip/hdl/axi_vip_if.sv" \
+"C:/Xilinx/Vivado/2023.2/data/xilinx_vip/hdl/clk_vip_if.sv" \
+"C:/Xilinx/Vivado/2023.2/data/xilinx_vip/hdl/rst_vip_if.sv" \
 
-vlog -work xpm  -incr -mfcu  -sv -L axi_vip_v1_1_15 -L processing_system7_vip_v1_0_17 -L xilinx_vip "+incdir+../../../../PYNQ-Z1_QSPI.gen/sources_1/bd/design_1/ipshared/ec67/hdl" "+incdir+../../../../PYNQ-Z1_QSPI.gen/sources_1/bd/design_1/ipshared/6b2b/hdl" "+incdir+../../../../PYNQ-Z1_QSPI.gen/sources_1/bd/design_1/ipshared/c2c6" "+incdir+D:/Xilinx/Vivado/2023.2/data/xilinx_vip/include" \
-"D:/Xilinx/Vivado/2023.2/data/ip/xpm/xpm_cdc/hdl/xpm_cdc.sv" \
-"D:/Xilinx/Vivado/2023.2/data/ip/xpm/xpm_fifo/hdl/xpm_fifo.sv" \
-"D:/Xilinx/Vivado/2023.2/data/ip/xpm/xpm_memory/hdl/xpm_memory.sv" \
+vlog -work xpm  -incr -mfcu  -sv -L axi_vip_v1_1_15 -L processing_system7_vip_v1_0_17 -L xilinx_vip "+incdir+../../../../PYNQ-Z1_QSPI.gen/sources_1/bd/design_1/ipshared/ec67/hdl" "+incdir+../../../../PYNQ-Z1_QSPI.gen/sources_1/bd/design_1/ipshared/6b2b/hdl" "+incdir+../../../../PYNQ-Z1_QSPI.gen/sources_1/bd/design_1/ipshared/c2c6" "+incdir+C:/Xilinx/Vivado/2023.2/data/xilinx_vip/include" \
+"C:/Xilinx/Vivado/2023.2/data/ip/xpm/xpm_cdc/hdl/xpm_cdc.sv" \
+"C:/Xilinx/Vivado/2023.2/data/ip/xpm/xpm_fifo/hdl/xpm_fifo.sv" \
+"C:/Xilinx/Vivado/2023.2/data/ip/xpm/xpm_memory/hdl/xpm_memory.sv" \
 
 vcom -work xpm  -93  \
-"D:/Xilinx/Vivado/2023.2/data/ip/xpm/xpm_VCOMP.vhd" \
+"C:/Xilinx/Vivado/2023.2/data/ip/xpm/xpm_VCOMP.vhd" \
 
-vlog -work axi_infrastructure_v1_1_0  -incr -mfcu  "+incdir+../../../../PYNQ-Z1_QSPI.gen/sources_1/bd/design_1/ipshared/ec67/hdl" "+incdir+../../../../PYNQ-Z1_QSPI.gen/sources_1/bd/design_1/ipshared/6b2b/hdl" "+incdir+../../../../PYNQ-Z1_QSPI.gen/sources_1/bd/design_1/ipshared/c2c6" "+incdir+D:/Xilinx/Vivado/2023.2/data/xilinx_vip/include" \
+vlog -work axi_infrastructure_v1_1_0  -incr -mfcu  "+incdir+../../../../PYNQ-Z1_QSPI.gen/sources_1/bd/design_1/ipshared/ec67/hdl" "+incdir+../../../../PYNQ-Z1_QSPI.gen/sources_1/bd/design_1/ipshared/6b2b/hdl" "+incdir+../../../../PYNQ-Z1_QSPI.gen/sources_1/bd/design_1/ipshared/c2c6" "+incdir+C:/Xilinx/Vivado/2023.2/data/xilinx_vip/include" \
 "../../../../PYNQ-Z1_QSPI.gen/sources_1/bd/design_1/ipshared/ec67/hdl/axi_infrastructure_v1_1_vl_rfs.v" \
 
-vlog -work axi_vip_v1_1_15  -incr -mfcu  -sv -L axi_vip_v1_1_15 -L processing_system7_vip_v1_0_17 -L xilinx_vip "+incdir+../../../../PYNQ-Z1_QSPI.gen/sources_1/bd/design_1/ipshared/ec67/hdl" "+incdir+../../../../PYNQ-Z1_QSPI.gen/sources_1/bd/design_1/ipshared/6b2b/hdl" "+incdir+../../../../PYNQ-Z1_QSPI.gen/sources_1/bd/design_1/ipshared/c2c6" "+incdir+D:/Xilinx/Vivado/2023.2/data/xilinx_vip/include" \
+vlog -work axi_vip_v1_1_15  -incr -mfcu  -sv -L axi_vip_v1_1_15 -L processing_system7_vip_v1_0_17 -L xilinx_vip "+incdir+../../../../PYNQ-Z1_QSPI.gen/sources_1/bd/design_1/ipshared/ec67/hdl" "+incdir+../../../../PYNQ-Z1_QSPI.gen/sources_1/bd/design_1/ipshared/6b2b/hdl" "+incdir+../../../../PYNQ-Z1_QSPI.gen/sources_1/bd/design_1/ipshared/c2c6" "+incdir+C:/Xilinx/Vivado/2023.2/data/xilinx_vip/include" \
 "../../../../PYNQ-Z1_QSPI.gen/sources_1/bd/design_1/ipshared/5753/hdl/axi_vip_v1_1_vl_rfs.sv" \
 
-vlog -work processing_system7_vip_v1_0_17  -incr -mfcu  -sv -L axi_vip_v1_1_15 -L processing_system7_vip_v1_0_17 -L xilinx_vip "+incdir+../../../../PYNQ-Z1_QSPI.gen/sources_1/bd/design_1/ipshared/ec67/hdl" "+incdir+../../../../PYNQ-Z1_QSPI.gen/sources_1/bd/design_1/ipshared/6b2b/hdl" "+incdir+../../../../PYNQ-Z1_QSPI.gen/sources_1/bd/design_1/ipshared/c2c6" "+incdir+D:/Xilinx/Vivado/2023.2/data/xilinx_vip/include" \
+vlog -work processing_system7_vip_v1_0_17  -incr -mfcu  -sv -L axi_vip_v1_1_15 -L processing_system7_vip_v1_0_17 -L xilinx_vip "+incdir+../../../../PYNQ-Z1_QSPI.gen/sources_1/bd/design_1/ipshared/ec67/hdl" "+incdir+../../../../PYNQ-Z1_QSPI.gen/sources_1/bd/design_1/ipshared/6b2b/hdl" "+incdir+../../../../PYNQ-Z1_QSPI.gen/sources_1/bd/design_1/ipshared/c2c6" "+incdir+C:/Xilinx/Vivado/2023.2/data/xilinx_vip/include" \
 "../../../../PYNQ-Z1_QSPI.gen/sources_1/bd/design_1/ipshared/6b2b/hdl/processing_system7_vip_v1_0_vl_rfs.sv" \
 
-vlog -work xil_defaultlib  -incr -mfcu  "+incdir+../../../../PYNQ-Z1_QSPI.gen/sources_1/bd/design_1/ipshared/ec67/hdl" "+incdir+../../../../PYNQ-Z1_QSPI.gen/sources_1/bd/design_1/ipshared/6b2b/hdl" "+incdir+../../../../PYNQ-Z1_QSPI.gen/sources_1/bd/design_1/ipshared/c2c6" "+incdir+D:/Xilinx/Vivado/2023.2/data/xilinx_vip/include" \
+vlog -work xil_defaultlib  -incr -mfcu  "+incdir+../../../../PYNQ-Z1_QSPI.gen/sources_1/bd/design_1/ipshared/ec67/hdl" "+incdir+../../../../PYNQ-Z1_QSPI.gen/sources_1/bd/design_1/ipshared/6b2b/hdl" "+incdir+../../../../PYNQ-Z1_QSPI.gen/sources_1/bd/design_1/ipshared/c2c6" "+incdir+C:/Xilinx/Vivado/2023.2/data/xilinx_vip/include" \
 "../../../bd/design_1/ip/design_1_processing_system7_0_0/sim/design_1_processing_system7_0_0.v" \
 
-vlog -work dist_mem_gen_v8_0_14  -incr -mfcu  "+incdir+../../../../PYNQ-Z1_QSPI.gen/sources_1/bd/design_1/ipshared/ec67/hdl" "+incdir+../../../../PYNQ-Z1_QSPI.gen/sources_1/bd/design_1/ipshared/6b2b/hdl" "+incdir+../../../../PYNQ-Z1_QSPI.gen/sources_1/bd/design_1/ipshared/c2c6" "+incdir+D:/Xilinx/Vivado/2023.2/data/xilinx_vip/include" \
+vlog -work dist_mem_gen_v8_0_14  -incr -mfcu  "+incdir+../../../../PYNQ-Z1_QSPI.gen/sources_1/bd/design_1/ipshared/ec67/hdl" "+incdir+../../../../PYNQ-Z1_QSPI.gen/sources_1/bd/design_1/ipshared/6b2b/hdl" "+incdir+../../../../PYNQ-Z1_QSPI.gen/sources_1/bd/design_1/ipshared/c2c6" "+incdir+C:/Xilinx/Vivado/2023.2/data/xilinx_vip/include" \
 "../../../../PYNQ-Z1_QSPI.gen/sources_1/bd/design_1/ipshared/2ec6/simulation/dist_mem_gen_v8_0.v" \
 
 vcom -work lib_pkg_v1_0_3  -93  \
@@ -94,13 +94,13 @@ vcom -work lib_cdc_v1_0_2  -93  \
 vcom -work lib_srl_fifo_v1_0_3  -93  \
 "../../../../PYNQ-Z1_QSPI.gen/sources_1/bd/design_1/ipshared/02c4/hdl/lib_srl_fifo_v1_0_rfs.vhd" \
 
-vlog -work fifo_generator_v13_2_9  -incr -mfcu  "+incdir+../../../../PYNQ-Z1_QSPI.gen/sources_1/bd/design_1/ipshared/ec67/hdl" "+incdir+../../../../PYNQ-Z1_QSPI.gen/sources_1/bd/design_1/ipshared/6b2b/hdl" "+incdir+../../../../PYNQ-Z1_QSPI.gen/sources_1/bd/design_1/ipshared/c2c6" "+incdir+D:/Xilinx/Vivado/2023.2/data/xilinx_vip/include" \
+vlog -work fifo_generator_v13_2_9  -incr -mfcu  "+incdir+../../../../PYNQ-Z1_QSPI.gen/sources_1/bd/design_1/ipshared/ec67/hdl" "+incdir+../../../../PYNQ-Z1_QSPI.gen/sources_1/bd/design_1/ipshared/6b2b/hdl" "+incdir+../../../../PYNQ-Z1_QSPI.gen/sources_1/bd/design_1/ipshared/c2c6" "+incdir+C:/Xilinx/Vivado/2023.2/data/xilinx_vip/include" \
 "../../../../PYNQ-Z1_QSPI.gen/sources_1/bd/design_1/ipshared/ac72/simulation/fifo_generator_vlog_beh.v" \
 
 vcom -work fifo_generator_v13_2_9  -93  \
 "../../../../PYNQ-Z1_QSPI.gen/sources_1/bd/design_1/ipshared/ac72/hdl/fifo_generator_v13_2_rfs.vhd" \
 
-vlog -work fifo_generator_v13_2_9  -incr -mfcu  "+incdir+../../../../PYNQ-Z1_QSPI.gen/sources_1/bd/design_1/ipshared/ec67/hdl" "+incdir+../../../../PYNQ-Z1_QSPI.gen/sources_1/bd/design_1/ipshared/6b2b/hdl" "+incdir+../../../../PYNQ-Z1_QSPI.gen/sources_1/bd/design_1/ipshared/c2c6" "+incdir+D:/Xilinx/Vivado/2023.2/data/xilinx_vip/include" \
+vlog -work fifo_generator_v13_2_9  -incr -mfcu  "+incdir+../../../../PYNQ-Z1_QSPI.gen/sources_1/bd/design_1/ipshared/ec67/hdl" "+incdir+../../../../PYNQ-Z1_QSPI.gen/sources_1/bd/design_1/ipshared/6b2b/hdl" "+incdir+../../../../PYNQ-Z1_QSPI.gen/sources_1/bd/design_1/ipshared/c2c6" "+incdir+C:/Xilinx/Vivado/2023.2/data/xilinx_vip/include" \
 "../../../../PYNQ-Z1_QSPI.gen/sources_1/bd/design_1/ipshared/ac72/hdl/fifo_generator_v13_2_rfs.v" \
 
 vcom -work lib_fifo_v1_0_18  -93  \
@@ -118,7 +118,7 @@ vcom -work axi_quad_spi_v3_2_28  -93  \
 vcom -work xil_defaultlib  -93  \
 "../../../bd/design_1/ip/design_1_axi_quad_spi_0_0/sim/design_1_axi_quad_spi_0_0.vhd" \
 
-vlog -work xil_defaultlib  -incr -mfcu  "+incdir+../../../../PYNQ-Z1_QSPI.gen/sources_1/bd/design_1/ipshared/ec67/hdl" "+incdir+../../../../PYNQ-Z1_QSPI.gen/sources_1/bd/design_1/ipshared/6b2b/hdl" "+incdir+../../../../PYNQ-Z1_QSPI.gen/sources_1/bd/design_1/ipshared/c2c6" "+incdir+D:/Xilinx/Vivado/2023.2/data/xilinx_vip/include" \
+vlog -work xil_defaultlib  -incr -mfcu  "+incdir+../../../../PYNQ-Z1_QSPI.gen/sources_1/bd/design_1/ipshared/ec67/hdl" "+incdir+../../../../PYNQ-Z1_QSPI.gen/sources_1/bd/design_1/ipshared/6b2b/hdl" "+incdir+../../../../PYNQ-Z1_QSPI.gen/sources_1/bd/design_1/ipshared/c2c6" "+incdir+C:/Xilinx/Vivado/2023.2/data/xilinx_vip/include" \
 "../../../bd/design_1/ip/design_1_clk_wiz_0_0/design_1_clk_wiz_0_0_mmcm_pll_drp.v" \
 
 vcom -work xil_defaultlib  -93  \
@@ -135,23 +135,23 @@ vcom -work xil_defaultlib  -93  \
 "../../../bd/design_1/ip/design_1_clk_wiz_0_0/design_1_clk_wiz_0_0_clk_wiz_drp.vhd" \
 "../../../bd/design_1/ip/design_1_clk_wiz_0_0/design_1_clk_wiz_0_0_axi_clk_config.vhd" \
 
-vlog -work xil_defaultlib  -incr -mfcu  "+incdir+../../../../PYNQ-Z1_QSPI.gen/sources_1/bd/design_1/ipshared/ec67/hdl" "+incdir+../../../../PYNQ-Z1_QSPI.gen/sources_1/bd/design_1/ipshared/6b2b/hdl" "+incdir+../../../../PYNQ-Z1_QSPI.gen/sources_1/bd/design_1/ipshared/c2c6" "+incdir+D:/Xilinx/Vivado/2023.2/data/xilinx_vip/include" \
+vlog -work xil_defaultlib  -incr -mfcu  "+incdir+../../../../PYNQ-Z1_QSPI.gen/sources_1/bd/design_1/ipshared/ec67/hdl" "+incdir+../../../../PYNQ-Z1_QSPI.gen/sources_1/bd/design_1/ipshared/6b2b/hdl" "+incdir+../../../../PYNQ-Z1_QSPI.gen/sources_1/bd/design_1/ipshared/c2c6" "+incdir+C:/Xilinx/Vivado/2023.2/data/xilinx_vip/include" \
 "../../../bd/design_1/ip/design_1_clk_wiz_0_0/design_1_clk_wiz_0_0_clk_wiz.v" \
 "../../../bd/design_1/ip/design_1_clk_wiz_0_0/design_1_clk_wiz_0_0.v" \
 
-vlog -work generic_baseblocks_v2_1_1  -incr -mfcu  "+incdir+../../../../PYNQ-Z1_QSPI.gen/sources_1/bd/design_1/ipshared/ec67/hdl" "+incdir+../../../../PYNQ-Z1_QSPI.gen/sources_1/bd/design_1/ipshared/6b2b/hdl" "+incdir+../../../../PYNQ-Z1_QSPI.gen/sources_1/bd/design_1/ipshared/c2c6" "+incdir+D:/Xilinx/Vivado/2023.2/data/xilinx_vip/include" \
+vlog -work generic_baseblocks_v2_1_1  -incr -mfcu  "+incdir+../../../../PYNQ-Z1_QSPI.gen/sources_1/bd/design_1/ipshared/ec67/hdl" "+incdir+../../../../PYNQ-Z1_QSPI.gen/sources_1/bd/design_1/ipshared/6b2b/hdl" "+incdir+../../../../PYNQ-Z1_QSPI.gen/sources_1/bd/design_1/ipshared/c2c6" "+incdir+C:/Xilinx/Vivado/2023.2/data/xilinx_vip/include" \
 "../../../../PYNQ-Z1_QSPI.gen/sources_1/bd/design_1/ipshared/10ab/hdl/generic_baseblocks_v2_1_vl_rfs.v" \
 
-vlog -work axi_register_slice_v2_1_29  -incr -mfcu  "+incdir+../../../../PYNQ-Z1_QSPI.gen/sources_1/bd/design_1/ipshared/ec67/hdl" "+incdir+../../../../PYNQ-Z1_QSPI.gen/sources_1/bd/design_1/ipshared/6b2b/hdl" "+incdir+../../../../PYNQ-Z1_QSPI.gen/sources_1/bd/design_1/ipshared/c2c6" "+incdir+D:/Xilinx/Vivado/2023.2/data/xilinx_vip/include" \
+vlog -work axi_register_slice_v2_1_29  -incr -mfcu  "+incdir+../../../../PYNQ-Z1_QSPI.gen/sources_1/bd/design_1/ipshared/ec67/hdl" "+incdir+../../../../PYNQ-Z1_QSPI.gen/sources_1/bd/design_1/ipshared/6b2b/hdl" "+incdir+../../../../PYNQ-Z1_QSPI.gen/sources_1/bd/design_1/ipshared/c2c6" "+incdir+C:/Xilinx/Vivado/2023.2/data/xilinx_vip/include" \
 "../../../../PYNQ-Z1_QSPI.gen/sources_1/bd/design_1/ipshared/ff9f/hdl/axi_register_slice_v2_1_vl_rfs.v" \
 
-vlog -work axi_data_fifo_v2_1_28  -incr -mfcu  "+incdir+../../../../PYNQ-Z1_QSPI.gen/sources_1/bd/design_1/ipshared/ec67/hdl" "+incdir+../../../../PYNQ-Z1_QSPI.gen/sources_1/bd/design_1/ipshared/6b2b/hdl" "+incdir+../../../../PYNQ-Z1_QSPI.gen/sources_1/bd/design_1/ipshared/c2c6" "+incdir+D:/Xilinx/Vivado/2023.2/data/xilinx_vip/include" \
+vlog -work axi_data_fifo_v2_1_28  -incr -mfcu  "+incdir+../../../../PYNQ-Z1_QSPI.gen/sources_1/bd/design_1/ipshared/ec67/hdl" "+incdir+../../../../PYNQ-Z1_QSPI.gen/sources_1/bd/design_1/ipshared/6b2b/hdl" "+incdir+../../../../PYNQ-Z1_QSPI.gen/sources_1/bd/design_1/ipshared/c2c6" "+incdir+C:/Xilinx/Vivado/2023.2/data/xilinx_vip/include" \
 "../../../../PYNQ-Z1_QSPI.gen/sources_1/bd/design_1/ipshared/279e/hdl/axi_data_fifo_v2_1_vl_rfs.v" \
 
-vlog -work axi_crossbar_v2_1_30  -incr -mfcu  "+incdir+../../../../PYNQ-Z1_QSPI.gen/sources_1/bd/design_1/ipshared/ec67/hdl" "+incdir+../../../../PYNQ-Z1_QSPI.gen/sources_1/bd/design_1/ipshared/6b2b/hdl" "+incdir+../../../../PYNQ-Z1_QSPI.gen/sources_1/bd/design_1/ipshared/c2c6" "+incdir+D:/Xilinx/Vivado/2023.2/data/xilinx_vip/include" \
+vlog -work axi_crossbar_v2_1_30  -incr -mfcu  "+incdir+../../../../PYNQ-Z1_QSPI.gen/sources_1/bd/design_1/ipshared/ec67/hdl" "+incdir+../../../../PYNQ-Z1_QSPI.gen/sources_1/bd/design_1/ipshared/6b2b/hdl" "+incdir+../../../../PYNQ-Z1_QSPI.gen/sources_1/bd/design_1/ipshared/c2c6" "+incdir+C:/Xilinx/Vivado/2023.2/data/xilinx_vip/include" \
 "../../../../PYNQ-Z1_QSPI.gen/sources_1/bd/design_1/ipshared/fb47/hdl/axi_crossbar_v2_1_vl_rfs.v" \
 
-vlog -work xil_defaultlib  -incr -mfcu  "+incdir+../../../../PYNQ-Z1_QSPI.gen/sources_1/bd/design_1/ipshared/ec67/hdl" "+incdir+../../../../PYNQ-Z1_QSPI.gen/sources_1/bd/design_1/ipshared/6b2b/hdl" "+incdir+../../../../PYNQ-Z1_QSPI.gen/sources_1/bd/design_1/ipshared/c2c6" "+incdir+D:/Xilinx/Vivado/2023.2/data/xilinx_vip/include" \
+vlog -work xil_defaultlib  -incr -mfcu  "+incdir+../../../../PYNQ-Z1_QSPI.gen/sources_1/bd/design_1/ipshared/ec67/hdl" "+incdir+../../../../PYNQ-Z1_QSPI.gen/sources_1/bd/design_1/ipshared/6b2b/hdl" "+incdir+../../../../PYNQ-Z1_QSPI.gen/sources_1/bd/design_1/ipshared/c2c6" "+incdir+C:/Xilinx/Vivado/2023.2/data/xilinx_vip/include" \
 "../../../bd/design_1/ip/design_1_xbar_0/sim/design_1_xbar_0.v" \
 
 vcom -work proc_sys_reset_v5_0_14  -93  \
@@ -169,10 +169,10 @@ vcom -work xil_defaultlib  -93  \
 "../../../bd/design_1/ipshared/48df/QSPI_top.vhd" \
 "../../../bd/design_1/ip/design_1_QSPI_top_0_4/sim/design_1_QSPI_top_0_4.vhd" \
 
-vlog -work xlconstant_v1_1_8  -incr -mfcu  "+incdir+../../../../PYNQ-Z1_QSPI.gen/sources_1/bd/design_1/ipshared/ec67/hdl" "+incdir+../../../../PYNQ-Z1_QSPI.gen/sources_1/bd/design_1/ipshared/6b2b/hdl" "+incdir+../../../../PYNQ-Z1_QSPI.gen/sources_1/bd/design_1/ipshared/c2c6" "+incdir+D:/Xilinx/Vivado/2023.2/data/xilinx_vip/include" \
+vlog -work xlconstant_v1_1_8  -incr -mfcu  "+incdir+../../../../PYNQ-Z1_QSPI.gen/sources_1/bd/design_1/ipshared/ec67/hdl" "+incdir+../../../../PYNQ-Z1_QSPI.gen/sources_1/bd/design_1/ipshared/6b2b/hdl" "+incdir+../../../../PYNQ-Z1_QSPI.gen/sources_1/bd/design_1/ipshared/c2c6" "+incdir+C:/Xilinx/Vivado/2023.2/data/xilinx_vip/include" \
 "../../../../PYNQ-Z1_QSPI.gen/sources_1/bd/design_1/ipshared/d390/hdl/xlconstant_v1_1_vl_rfs.v" \
 
-vlog -work xil_defaultlib  -incr -mfcu  "+incdir+../../../../PYNQ-Z1_QSPI.gen/sources_1/bd/design_1/ipshared/ec67/hdl" "+incdir+../../../../PYNQ-Z1_QSPI.gen/sources_1/bd/design_1/ipshared/6b2b/hdl" "+incdir+../../../../PYNQ-Z1_QSPI.gen/sources_1/bd/design_1/ipshared/c2c6" "+incdir+D:/Xilinx/Vivado/2023.2/data/xilinx_vip/include" \
+vlog -work xil_defaultlib  -incr -mfcu  "+incdir+../../../../PYNQ-Z1_QSPI.gen/sources_1/bd/design_1/ipshared/ec67/hdl" "+incdir+../../../../PYNQ-Z1_QSPI.gen/sources_1/bd/design_1/ipshared/6b2b/hdl" "+incdir+../../../../PYNQ-Z1_QSPI.gen/sources_1/bd/design_1/ipshared/c2c6" "+incdir+C:/Xilinx/Vivado/2023.2/data/xilinx_vip/include" \
 "../../../bd/design_1/ip/design_1_xlconstant_0_0/sim/design_1_xlconstant_0_0.v" \
 "../../../bd/design_1/ip/design_1_xlconstant_1_0/sim/design_1_xlconstant_1_0.v" \
 "../../../bd/design_1/ip/design_1_xlconstant_1_1/sim/design_1_xlconstant_1_1.v" \
@@ -186,10 +186,10 @@ vcom -work axi_iic_v2_1_5  -93  \
 vcom -work xil_defaultlib  -93  \
 "../../../bd/design_1/ip/design_1_axi_iic_0_0/sim/design_1_axi_iic_0_0.vhd" \
 
-vlog -work axi_protocol_converter_v2_1_29  -incr -mfcu  "+incdir+../../../../PYNQ-Z1_QSPI.gen/sources_1/bd/design_1/ipshared/ec67/hdl" "+incdir+../../../../PYNQ-Z1_QSPI.gen/sources_1/bd/design_1/ipshared/6b2b/hdl" "+incdir+../../../../PYNQ-Z1_QSPI.gen/sources_1/bd/design_1/ipshared/c2c6" "+incdir+D:/Xilinx/Vivado/2023.2/data/xilinx_vip/include" \
+vlog -work axi_protocol_converter_v2_1_29  -incr -mfcu  "+incdir+../../../../PYNQ-Z1_QSPI.gen/sources_1/bd/design_1/ipshared/ec67/hdl" "+incdir+../../../../PYNQ-Z1_QSPI.gen/sources_1/bd/design_1/ipshared/6b2b/hdl" "+incdir+../../../../PYNQ-Z1_QSPI.gen/sources_1/bd/design_1/ipshared/c2c6" "+incdir+C:/Xilinx/Vivado/2023.2/data/xilinx_vip/include" \
 "../../../../PYNQ-Z1_QSPI.gen/sources_1/bd/design_1/ipshared/a63f/hdl/axi_protocol_converter_v2_1_vl_rfs.v" \
 
-vlog -work xil_defaultlib  -incr -mfcu  "+incdir+../../../../PYNQ-Z1_QSPI.gen/sources_1/bd/design_1/ipshared/ec67/hdl" "+incdir+../../../../PYNQ-Z1_QSPI.gen/sources_1/bd/design_1/ipshared/6b2b/hdl" "+incdir+../../../../PYNQ-Z1_QSPI.gen/sources_1/bd/design_1/ipshared/c2c6" "+incdir+D:/Xilinx/Vivado/2023.2/data/xilinx_vip/include" \
+vlog -work xil_defaultlib  -incr -mfcu  "+incdir+../../../../PYNQ-Z1_QSPI.gen/sources_1/bd/design_1/ipshared/ec67/hdl" "+incdir+../../../../PYNQ-Z1_QSPI.gen/sources_1/bd/design_1/ipshared/6b2b/hdl" "+incdir+../../../../PYNQ-Z1_QSPI.gen/sources_1/bd/design_1/ipshared/c2c6" "+incdir+C:/Xilinx/Vivado/2023.2/data/xilinx_vip/include" \
 "../../../bd/design_1/ip/design_1_auto_pc_0/sim/design_1_auto_pc_0.v" \
 
 vcom -work xil_defaultlib  -93  \

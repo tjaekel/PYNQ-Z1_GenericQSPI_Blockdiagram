@@ -39,7 +39,7 @@ import sys
 import glob
 #import re
 
-DEBUG = True
+DEBUG = False
 
 def payload_checksum(data):
     #it must be byte array
