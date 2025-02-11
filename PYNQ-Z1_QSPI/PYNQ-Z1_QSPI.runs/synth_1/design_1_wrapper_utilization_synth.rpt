@@ -1,7 +1,7 @@
 Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
 ---------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2023.2 (win64) Build 4029153 Fri Oct 13 20:14:34 MDT 2023
-| Date         : Mon Feb 10 14:44:24 2025
+| Date         : Tue Feb 11 13:38:50 2025
 | Host         : 2XZQ4M3 running 64-bit major release  (build 9200)
 | Command      : report_utilization -file design_1_wrapper_utilization_synth.rpt -pb design_1_wrapper_utilization_synth.pb
 | Design       : design_1_wrapper
@@ -60,8 +60,8 @@ Warning! LUT value is adjusted to account for LUT combining.
 | 0     |          Yes |           - |            - |
 | 0     |          Yes |           - |          Set |
 | 0     |          Yes |           - |        Reset |
-| 193   |          Yes |         Set |            - |
-| 3744  |          Yes |       Reset |            - |
+| 208   |          Yes |         Set |            - |
+| 3729  |          Yes |       Reset |            - |
 +-------+--------------+-------------+--------------+
 
 
@@ -150,17 +150,17 @@ Warning! LUT value is adjusted to account for LUT combining.
 +------------+------+----------------------+
 |  Ref Name  | Used |  Functional Category |
 +------------+------+----------------------+
-| FDRE       | 3744 |         Flop & Latch |
-| LUT6       | 1163 |                  LUT |
-| LUT2       |  649 |                  LUT |
-| LUT3       |  643 |                  LUT |
-| LUT5       |  564 |                  LUT |
-| LUT4       |  416 |                  LUT |
-| FDSE       |  193 |         Flop & Latch |
+| FDRE       | 3729 |         Flop & Latch |
+| LUT6       | 1165 |                  LUT |
+| LUT2       |  648 |                  LUT |
+| LUT3       |  641 |                  LUT |
+| LUT5       |  562 |                  LUT |
+| LUT4       |  418 |                  LUT |
+| FDSE       |  208 |         Flop & Latch |
 | MUXF7      |  142 |                MuxFx |
 | BIBUF      |  130 |                   IO |
 | CARRY4     |   89 |           CarryLogic |
-| LUT1       |   86 |                  LUT |
+| LUT1       |   87 |                  LUT |
 | SRLC32E    |   47 |   Distributed Memory |
 | SRL16E     |   37 |   Distributed Memory |
 | MUXF8      |   28 |                MuxFx |

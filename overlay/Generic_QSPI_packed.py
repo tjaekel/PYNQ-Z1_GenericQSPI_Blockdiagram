@@ -32,8 +32,8 @@ ffi = FFI()
 ffi.cdef("""unsigned int C_QSPI_Init(int, int, unsigned int);
             void C_GPIO_Out(unsigned int);
             unsigned int C_GPIO_In(void);
-            unsigned int C_QSPI_Write(unsigned int *, int);
-            unsigned int C_QSPI_Read(unsigned int *, unsigned int *, int);
+            unsigned int C_QSPI_Write(unsigned char *, int);
+            unsigned int C_QSPI_Read(unsigned char *, unsigned char *, int);
             void C_QSPI_Deinit(void);
          """)
 
@@ -41,7 +41,7 @@ clib = None
 
 def QSPIInit():
     global clib
-    clib = ffi.dlopen("/home/xilinx/c_code/libGeneric_QSPI.so")
+    clib = ffi.dlopen("/home/xilinx/c_code/libGeneric_QSPI_packed.so")
     clib.C_QSPI_Init(4, 1, 0x7F)
     return 1
 
@@ -52,13 +52,13 @@ def QSPIDeinit():
 def SendTransaction(tr, numRd):
     global clib
     if (numRd == 0):
-        #write transaction
-        i = clib.C_QSPI_Write(ffi.cast("unsigned int *", ffi.from_buffer(tr)), len(tr))
+        #write transaction - len is in bytes!
+        i = clib.C_QSPI_Write(ffi.cast("unsigned char *", ffi.from_buffer(tr)), len(tr))
         return i
     else:
-        #read transaction
+        #read transaction - len is in words!
         rdVal = array.array('I', [0] * numRd)
-        i = clib.C_QSPI_Read(ffi.cast("unsigned int *", ffi.from_buffer(tr)), ffi.cast("unsigned int *", ffi.from_buffer(rdVal)), len(rdVal))
+        i = clib.C_QSPI_Read(ffi.cast("unsigned char *", ffi.from_buffer(tr)), ffi.cast("unsigned char *", ffi.from_buffer(rdVal)), numRd)
         return rdVal
 
 def GPIOout(val):

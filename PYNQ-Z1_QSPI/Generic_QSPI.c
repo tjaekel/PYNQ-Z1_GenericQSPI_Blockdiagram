@@ -16,6 +16,10 @@
 //with WITH_FLOW_CONTROL:
 //RD is one word behind WITHOUT_FLOW_CONTROL!
 
+/* ATT:
+ * bit 27 in CTL_REG is RESET! set it to 1 to release block
+ */
+
 #define Base0 0x41200000
 #define Base1 0x41210000
 
@@ -118,13 +122,13 @@ inline unsigned int trigger_cnt(int inc)
 
 	FlowCtl = flowCtl;
 	GPIOout = (defGPIOout  & 0x7F) << 16;
-	*reg_ptr1 = 0xF | Gdiv | GPIOout;		//all CSn inactive, resets also trigger count
+	*reg_ptr1 = 0x0800000F | Gdiv | GPIOout;	//all CSn inactive, resets also trigger count
 	return 0;
 }
 
 /* export */ void C_QSPI_Deinit(void)
 {
-	*reg_ptr1 = 0x0000000F | GPIOout | Gdiv;	//all CSn inactive
+	*reg_ptr1 = 0x08000000 | 0x0000000F | GPIOout | Gdiv;	//all CSn inactive
 
 	munmap(mapped_base0, 16);
 	munmap(mapped_base1, 16);
@@ -161,20 +165,20 @@ static unsigned int QSPI_Write_nfc(unsigned int *val, int len)
 
 
 	*p0 = cmdX;
-	*p1 = 0x00000000 | CSval | GPIOout | Gdiv | trigger_cnt(1);
+	*p1 = 0x08000000 | CSval | GPIOout | Gdiv | trigger_cnt(1);
 	*p0 = *val++;	//32bit ADDR
-	*p1 = 0x00000000 | CSval | GPIOout | Gdiv | trigger_cnt(1);
+	*p1 = 0x08000000 | CSval | GPIOout | Gdiv | trigger_cnt(1);
 	*p0 = (*val++) << 8;	//24bit ALT
-	*p1 = 0x00000010 | CSval | GPIOout | Gdiv | trigger_cnt(1);
+	*p1 = 0x08000010 | CSval | GPIOout | Gdiv | trigger_cnt(1);
 	len -= 3;
 	while (len--)
 	{
 		*p0 = *val++;
 		//data write part: byte endian flip
-		*p1 = 0x00000080 | CSval | GPIOout | Gdiv | trigger_cnt(1);
+		*p1 = 0x08000080 | CSval | GPIOout | Gdiv | trigger_cnt(1);
 	}
 	
-	*p1 = 0x0000000F | GPIOout | Gdiv | trigger_cnt(0); //deselect CSn
+	*p1 = 0x0800000F | GPIOout | Gdiv | trigger_cnt(0); //deselect CSn
 	TRG_CNT = 0;
 
 	return 1;
@@ -198,17 +202,17 @@ static unsigned int QSPI_Write_fc(unsigned int *val, int len)
 	cmdX |= (cmd & 0x80) << 21;
 
 	*p0 = cmdX;
-	*p1 = 0x00000000 | CSval | GPIOout | Gdiv | trigger_cnt(1);
+	*p1 = 0x08000000 | CSval | GPIOout | Gdiv | trigger_cnt(1);
 	do {
 		sts = *(p1 + 2);
 	} while ( ! (sts & 0x1));
 	*p0 = *val++;	//32bit ADDR
-	*p1 = 0x00000000 | CSval | GPIOout | Gdiv | trigger_cnt(1);
+	*p1 = 0x08000000 | CSval | GPIOout | Gdiv | trigger_cnt(1);
 	do {
 		sts = *(p1 + 2);
 	} while ( ! (sts & 0x1));
 	*p0 = (*val++) << 8;	//24bit ALT
-	*p1 = 0x00000010 | CSval | GPIOout | Gdiv | trigger_cnt(1);
+	*p1 = 0x08000010 | CSval | GPIOout | Gdiv | trigger_cnt(1);
 	do {
 		sts = *(p1 + 2);
 	} while ( ! (sts & 0x1));
@@ -217,13 +221,13 @@ static unsigned int QSPI_Write_fc(unsigned int *val, int len)
 	{
 		*p0 = *val++;
 		//data write part: byte endian flip
-		*p1 = 0x00000080 | CSval | GPIOout | Gdiv | trigger_cnt(1);
+		*p1 = 0x08000080 | CSval | GPIOout | Gdiv | trigger_cnt(1);
 		do {
 			sts = *(p1 + 2);
 		} while ( ! (sts & 0x1));
 	}
 	
-	*p1 = 0x0000000F | GPIOout | Gdiv | trigger_cnt(0); //deselect CSn
+	*p1 = 0x0800000F | GPIOout | Gdiv | trigger_cnt(0); //deselect CSn
 	TRG_CNT = 0;
 
 	return 1;
@@ -256,13 +260,13 @@ static unsigned int QSPI_Read_nfc(unsigned int *wrVal, unsigned int *rdVal, int 
 	cmdX |= (cmd & 0x80) << 21;
 
 	*p0 = cmdX;
-	*p1 = 0x00000000 | CSval | GPIOout | Gdiv | trigger_cnt(1);
+	*p1 = 0x08000000 | CSval | GPIOout | Gdiv | trigger_cnt(1);
 	//ADDR: 32bit
 	*p0 = *wrVal++;
-	*p1 = 0x00000000 | CSval | GPIOout | Gdiv | trigger_cnt(1);
+	*p1 = 0x08000000 | CSval | GPIOout | Gdiv | trigger_cnt(1);
 	//ALT: 24bit ALT word plus 2bit TA
 	*p0 = (*wrVal++) << 8;
-	*p1 = 0x00000030 | CSval | GPIOout | Gdiv | trigger_cnt(1);
+	*p1 = 0x08000030 | CSval | GPIOout | Gdiv | trigger_cnt(1);
 	
 #if 1
 	//just a short delay, otherwise ALT + TA is wrong
@@ -272,11 +276,11 @@ static unsigned int QSPI_Read_nfc(unsigned int *wrVal, unsigned int *rdVal, int 
 	while(rdLen--)
 	{
 		//flip byte endian
-		*p1 = 0x000000C0 | CSval | GPIOout | Gdiv | trigger_cnt(1);
+		*p1 = 0x080000C0 | CSval | GPIOout | Gdiv | trigger_cnt(1);
 		*rdVal++  = *(p0 + 2);
 	}
 
-	*p1 = 0x0000000F | GPIOout | Gdiv | trigger_cnt(0);	//deselect CSn
+	*p1 = 0x0800000F | GPIOout | Gdiv | trigger_cnt(0);	//deselect CSn
 	TRG_CNT = 0;
 
 #if 1
@@ -305,19 +309,19 @@ static unsigned int QSPI_Read_fc(unsigned int *wrVal, unsigned int *rdVal, int r
 	cmdX |= (cmd & 0x80) << 21;
 
 	*p0 = cmdX;
-	*p1 = 0x00000000 | CSval | GPIOout | Gdiv | trigger_cnt(1);
+	*p1 = 0x08000000 | CSval | GPIOout | Gdiv | trigger_cnt(1);
 	do {
 		sts = *(p1 + 2);
 	} while ( ! (sts & 0x1));
 	//ADDR: 32bit
 	*p0 = *wrVal++;
-	*p1 = 0x00000000 | CSval | GPIOout | Gdiv | trigger_cnt(1);
+	*p1 = 0x08000000 | CSval | GPIOout | Gdiv | trigger_cnt(1);
 	do {
 		sts = *(p1 + 2);
 	} while ( ! (sts & 0x1));
 	//ALT: 24bit ALT word plus 2bit TA
 	*p0 = (*wrVal++) << 8;
-	*p1 = 0x00000030 | CSval | GPIOout | Gdiv | trigger_cnt(1);
+	*p1 = 0x08000030 | CSval | GPIOout | Gdiv | trigger_cnt(1);
 	do {
 		sts = *(p1 + 2);
 	} while ( ! (sts & 0x1));
@@ -326,14 +330,14 @@ static unsigned int QSPI_Read_fc(unsigned int *wrVal, unsigned int *rdVal, int r
 	while(rdLen--)
 	{
 		//flip byte endian
-		*p1 = 0x000000C0 | CSval | GPIOout | Gdiv | trigger_cnt(1);
+		*p1 = 0x080000C0 | CSval | GPIOout | Gdiv | trigger_cnt(1);
 		do {
 			sts = *(p1 + 2);
 		} while ( ! (sts & 0x1));
 		*rdVal++  = *(p0 + 2);
 	}
 
-	*p1 = 0x0000000F | GPIOout | Gdiv | trigger_cnt(0);	//deselect CSn
+	*p1 = 0x0800000F | GPIOout | Gdiv | trigger_cnt(0);	//deselect CSn
 	TRG_CNT = 0;
 
 #if 1
