@@ -22,11 +22,11 @@ plus:<br>
 * and sample a read response not with the internal QSPI: instead use an
   external QCLKfb in order to compensate the "round trip delay" or sample 10ns later
 
-This is the entire PL overlay project.
+This is the entire PL overlay project.<br>
 ATTENTION:<br>
 It needs also the "PYNQ-Z1_GenericQSPI_QSPI" project (as a component for
-the block diagram.
-This is the QSPI FPGA RTL itself, coming also with a testbench (to simulate and test the QsPI block).
+the block diagram, the QSPI block used as IP in block diagram).
+This is the QSPI FPGA RTL sub-project, coming also with a testbench (to simulate and test the QsPI block).
 This block is used in the entire project "PYNQ-Z1_GenericQSPI_Blockdiagram".
 
 The maximum QSPI clock speed is 50 MHz (CLK_DIV = 0), half of the PL clock speed.
