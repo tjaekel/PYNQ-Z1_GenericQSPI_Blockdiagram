@@ -92,7 +92,7 @@ In order to do so:
 * compile it - step 1:<br>
   gcc -fpic -c -O3 -Wall Generic_QSPI.c
 * build the shared library - step 2:<br>
-  gcc -shared -o libGeneric_QSPI.so Generic_QSPI.o
+  gcc -shared -o libGeneric_QSPI.so Generic_QSPI.o<br>
 This C-code shared library is used by the Python script via CFFI.
 It is way faster now.<br>
 
