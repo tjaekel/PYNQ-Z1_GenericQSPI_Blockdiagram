@@ -39,7 +39,7 @@ import sys
 import glob
 #import re
 
-DEBUG = True
+DEBUG = False
 
 def payload_checksum(data):
     #it must be byte array
@@ -363,7 +363,7 @@ def CMD_WREG(transNo, addr, words) :
 
 def CMD_RREG(transNo, addr, numWords) :
     global hccSPI
-    hccSPI.hcc_qspi_dmax_rreg(addr, numWords * 4, transNo)
+    return hccSPI.hcc_qspi_dmax_rreg(addr, numWords * 4, transNo)
 
 def CMD_WBLK(transNo, ep, words):
     global hccSPI
@@ -374,96 +374,13 @@ def CMD_WBLK(transNo, ep, words):
 
 def CMD_RBLK(ep, numWords):
     global hccSPI
-    hccSPI.hcc_qspi_rblk(ep, numWords * 4)
+    return hccSPI.hcc_qspi_rblk(ep, numWords * 4)
 
-def broadcast_test(flavor):
-    # we use WREG, WBLK, RBLK to enable EP and do broadcast test (except for RBLK)
-    if flavor == 0 :
-        #regular, no broadcast
-        #use it to write a different pattern into EP, for following test
-        CMD_WREG(0, 0x400000EC, [0x41e000])
-        CMD_WREG(0, 0x400000F0, [1])
-        CMD_WREG(0, 0x400000E8, [0x3e80001])
-        CMD_WBLK(0, 0, [0xAAAAAAAA, 0xBBBBBBBB])
-        CMD_WREG(0, 0x400000F0, [1])
-        #RBLK is a single transaction!
-        CMD_RBLK(0, 2)
-
-    if flavor == 1 :
-        #with broadcast - every command as BC, but clean afterwards each one
-        send_to_uart("sqspi 3")
-        CMD_WREG(1, 0x400000EC, [0x41e000])
-        send_to_uart("sqspi 1")
-        CMD_WREG(2, 0x400000EC, [0x41e000])
-        send_to_uart("sqspi 2")
-        CMD_WREG(2, 0x400000EC, [0x41e000])
-
-        send_to_uart("sqspi 3")
-        CMD_WREG(1, 0x400000F0, [1])
-        send_to_uart("sqspi 1")
-        CMD_WREG(2, 0x400000F0, [1])
-        send_to_uart("sqspi 2")
-        CMD_WREG(2, 0x400000F0, [1])
-
-        send_to_uart("sqspi 3")
-        CMD_WREG(1, 0x400000E8, [0x3e80001])
-        send_to_uart("sqspi 1")
-        CMD_WREG(2, 0x400000E8, [0x3e80001])
-        send_to_uart("sqspi 2")
-        CMD_WREG(2, 0x400000E8, [0x3e80001])
-
-        send_to_uart("sqspi 3")
-        CMD_WBLK(1, 0, [0x11223344, 0x55667788])
-        send_to_uart("sqspi 1")
-        CMD_WBLK(2, 0, [0x11223344, 0x55667788])
-        send_to_uart("sqspi 2")
-        CMD_WBLK(2, 0, [0x11223344, 0x55667788])
-
-        send_to_uart("sqspi 3")
-        CMD_WREG(1, 0x400000F0, [1])
-        send_to_uart("sqspi 1")
-        CMD_WREG(2, 0x400000F0, [1])
-        send_to_uart("sqspi 2")
-        CMD_WREG(2, 0x400000F0, [1])
-
-        #RBLK cannot be done with a broadcast, just one transaction
-        send_to_uart("sqspi 1")
-        CMD_RBLK(0, 2)
-        send_to_uart("sqspi 2")
-        CMD_RBLK(0, 2)
-
-    if flavor == 2 :
-        #broadcast but now different sequence (clean FPGA1 and keep going)
-        send_to_uart("sqspi 3")         #broadcast
-        CMD_WREG(1, 0x400000EC, [0x41e000])
-        send_to_uart("sqspi 1")
-        CMD_WREG(2, 0x400000EC, [0x41e000]) #clean 1
-        #keep going on 1, clean 2 later
-        CMD_WREG(0, 0x400000F0, [1])
-        CMD_WREG(0, 0x400000E8, [0x3e80001])
-        CMD_WBLK(0, 0, [0x01020304, 0x50607080])
-
-        #now clean pending 2
-        send_to_uart("sqspi 2")
-        CMD_WREG(2, 0x400000EC, [0x41e000])
-        #keep going on 2
-        CMD_WREG(0, 0x400000F0, [1])
-        CMD_WREG(0, 0x400000E8, [0x3e80001])
-        CMD_WBLK(0, 0, [0x44332211, 0x88776655])
-
-        send_to_uart("sqspi 3")         #broadcast
-        CMD_WREG(1, 0x400000F0, [1])
-        send_to_uart("sqspi 1")
-        CMD_WREG(2, 0x400000F0, [1])    #clean 1
-        #do not clean yet 2
-
-        #RBLK cannot be done with a broadcast, just one transaction
-        send_to_uart("sqspi 1")
-        CMD_RBLK(0, 2)
-        send_to_uart("sqspi 2")
-        #now clean pending 2
-        CMD_WREG(2, 0x400000F0, [1])    #clean 2
-        CMD_RBLK(0, 2)
+def HCC_Init():
+    """ call this function first when using CMD_WREG, CMD_RREG, etc.
+    """
+    global hccSPI
+    hccSPI = HccQSpiInterface()
 
 #---------------------------------------------------------------------------------
 
@@ -472,7 +389,7 @@ def Main():
 
     instr = ""
         
-    hccSPI = HccQSpiInterface()
+    HCC_Init()
 
     while instr != 'q':
         instr = input("-> ")
@@ -521,22 +438,6 @@ def Main():
                 print("*E: provide EP and numWords")
             else:
                 hccSPI.hcc_qspi_rblk(int(cmd[1], 16), int(cmd[2], 16) * 4)
-
-        elif cmd[0] == 'bctest':
-            l = len(cmd)
-            if l < 2:
-                print("*E: provide flavor number")
-            else:
-                broadcast_test(int(cmd[1], 16))
-            
-        else:
-            #send to UART
-            resp = send_to_uart(instr)
-            if resp.endswith('\r\n'):
-                print(resp, end = '')
-            else:
-                if len(resp):
-                    print(resp)
 
     print('Good bye')
 
