@@ -3,7 +3,7 @@
 
 ## Overview
 See the overview about this project in a PDF:<br>
-<a href="./PYNQ_Overview_public.pdf" class="image fit"></a>
+![PDF](./PYNQ_Overview_public.pdf)
 
 ## Generic QSPI
 Create a Generic QSPI interface on PYNQ-Z1: it should allow to generate
