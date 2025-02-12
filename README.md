@@ -40,7 +40,7 @@ ALT, generate a 2 clock cycle turnaround, do a read with a delayed QCLKfb signal
 (as input, delayed as all the data lanes, e.g. due to external level shifters)
 You can modify for other parameters, e.g. number of TurnAround cycles.
 
-Only QSPI mode 0 is currently implemented, but you can change the VHDL code for other modes.
+Only QSPI mode 3 is currently implemented, but you can change the VHDL code for other modes.
 
 The Generic QSPI block uses four registers:
 * a WR register (the word to send)
