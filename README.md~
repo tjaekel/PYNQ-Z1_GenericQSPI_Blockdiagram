@@ -15,27 +15,24 @@ If you need flexibility in terms of:
 * a 32bit ADDR - on all lanes
 * a 24bit ALT field - on all lanes
 * just 2bit CLK cycles as turnaround
-* Nx 32bit write words or reading Nx 32bit words<br>
-plus:<br>
+* Nx 32bit write words or reading Nx 32bit words
+plus:
 * have a QCLKfb signal: a QCLK signal coming in, e.g. delayed by level shifters,
   or delay the read sampling falling edge on QCLK by one SYS_CLK period (10ns later)
 * and sample a read response not with the internal QSPI: instead use an
   external QCLKfb in order to compensate the "round trip delay" or sample 10ns later
 
 This is the entire PL overlay project.
-ATTENTION:<br>
-It needs also the "PYNQ-Z1_GenericQSPI_QSPI" project (as a component for
+ATT: it needs also the "PYNQ-Z1_GenericQSPI_QSPI" project (as a component for
 the block diagram.
 This is the QSPI FPGA RTL itself, coming also with a testbench (to simulate and test the QsPI block).
 This block is used in the entire project "PYNQ-Z1_GenericQSPI_Blockdiagram".
 
 The maximum QSPI clock speed is 50 MHz (CLK_DIV = 0), half of the PL clock speed.
-But you can increase the PL PLL clock (3x faster), so potentially 150MHz QSPI possible.
 
 ## Approach
 The Generic QSPI is an independent block (with a testbench) to implement
-QSPI primitives, e.g.:<br>
-send a 8bit CMD word, send a 32bit ADDR, send a 24bit
+QSPI primitives, e.g.: send a 8bit CMD word, send a 32bit ADDR, send a 24bit
 ALT, generate a 2 clock cycle turnaround, do a read with a delayed QCLKfb signal
 (as input, delayed as all the data lanes, e.g. due to external level shifters)
 You can modify for other parameters, e.g. number of TurnAround cycles.
@@ -77,16 +74,12 @@ RTL code, so that an AXI write would trigger already what to do on QSPI signals.
 The QSPI is used in a Python script (Jupyter Notebook). The Python code for handling the registers
 on the AXI_GPIO block is way too slow: it generates huge gaps between the transactions.
 In order to speed up - the Python code is augmented to use C-code. The C-code does the entire transaction and is
-way faster.<br>
-
-Remark:<br>
+way faster.
+Remark:
 Bear in mind that even the C-code needs the MMIO access done via opening the virtual memory mapping ("mmap").
-This is done in the Init() function. It keeps the MMIO memory mapped device open until you call the Deinit() function.
-So, all following writes to the QSPI CTL_REG should be as fastest as possible (Using just Python scripts could open and close
-the memory mapped device all the time again which slows down a lot).
 
 ## C-Code
-The C-code is located in file "Generic_QSPI.c". It has to be compiled as a shared library.
+The C-code is located in file write32.c. It has to be compiled as a shared library.
 In order to do so:
 * place the C-code in a directory "/home/xilinx/c_code
 * compile it - step 1:<br>
@@ -96,17 +89,11 @@ In order to do so:
 This C-code shared library is used by the Python script via CFFI.
 It is way faster now.<br>
 
-ATTENTION:<br>
+ATTENTION:
 The C-code can be used with or without flow control: if the CLK_DIV is small (0..2) - the Python script is slower as the QsPI transactions.
 Without using the flow control: the QsPI transactions become more seamless and faster (no gaps in between).
 But with a slower QSPI clock: you can increase the PL PLL setting (up to 333.3MHz, 3x faster) or your use the C-code with flow control.
 The selection if with or without flow control is done on the C_QSPI_Init() function (via a parameter).
-With a faster PL PLL - the QSPI transactions are faster (possible to generate a QSPI transaction with 75MHz, up to 150MHz).
-
-Remark:<br>
-The speed of the Python and C-code, how fast a transaction can be generated, depends on the AXI clock. This clock is default 100MHz.
-But the PS (processor) runs with 550MHz - the AXI bus slows down how fast the QSPI can be.<br>
-Increasing the PL PLL clock speeds up, remarkably.
 
 ## Use overlay without FPGA synthesis and without C-code compile
 Please, find the files needed in folder "overlay":
